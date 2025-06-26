@@ -1,111 +1,275 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import TeamMemberCard from '../components/team/TeamMemberCard';
 import { teamMembers } from '../data/team';
 
 const TeamPage: React.FC = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <>
-      <section className="bg-primary-800 text-white py-24">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Team</h1>
-            <p className="text-xl text-primary-100">
+      <motion.section 
+        className="relative bg-cover bg-center py-32 min-h-[70vh] flex items-center"
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
+        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="container-custom relative z-10">
+          <motion.div 
+            className="max-w-4xl text-white"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.h1 
+              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight"
+              variants={itemVariants}
+            >
+              Our Team
+            </motion.h1>
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-100 max-w-3xl"
+              variants={itemVariants}
+            >
               Meet the experts driving innovation in biomass energy solutions.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="section">
+      <motion.section 
+        className="section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container-custom">
-          <div className="mb-12">
-            <h2 className="section-title">Leadership Team</h2>
-            <p className="section-subtitle">
+          <motion.div 
+            className="mb-16 text-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              variants={itemVariants}
+            >
+              Leadership Team
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
               Our experienced leadership brings decades of expertise in renewable energy, engineering, and sustainability.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {teamMembers
               .filter(member => member.department === 'leadership')
               .map((member, index) => (
-                <TeamMemberCard
+                <motion.div
                   key={index}
-                  name={member.name}
-                  role={member.role}
-                  photo={member.photo}
-                  bio={member.bio}
-                />
+                  variants={itemVariants}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TeamMemberCard
+                    name={member.name}
+                    role={member.role}
+                    photo={member.photo}
+                    bio={member.bio}
+                  />
+                </motion.div>
               ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="section bg-gray-50">
+      <motion.section 
+        className="section bg-gradient-to-br from-primary-50 to-primary-100"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container-custom">
-          <div className="mb-12">
-            <h2 className="section-title">Engineering Team</h2>
-            <p className="section-subtitle">
+          <motion.div 
+            className="mb-16 text-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              variants={itemVariants}
+            >
+              Engineering Team
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-primary-700 max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
               The brilliant minds behind our innovative biomass technologies and solutions.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {teamMembers
               .filter(member => member.department === 'engineering')
               .map((member, index) => (
-                <TeamMemberCard
+                <motion.div
                   key={index}
-                  name={member.name}
-                  role={member.role}
-                  photo={member.photo}
-                  bio={member.bio}
-                />
+                  variants={itemVariants}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TeamMemberCard
+                    name={member.name}
+                    role={member.role}
+                    photo={member.photo}
+                    bio={member.bio}
+                  />
+                </motion.div>
               ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="section">
+      <motion.section 
+        className="section"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="container-custom">
-          <div className="mb-12">
-            <h2 className="section-title">Sales & Support</h2>
-            <p className="section-subtitle">
+          <motion.div 
+            className="mb-16 text-center"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              variants={itemVariants}
+            >
+              Sales & Support
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
               Our dedicated team ensuring your biomass journey is smooth and successful.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {teamMembers
               .filter(member => member.department === 'sales')
               .map((member, index) => (
-                <TeamMemberCard
+                <motion.div
                   key={index}
-                  name={member.name}
-                  role={member.role}
-                  photo={member.photo}
-                  bio={member.bio}
-                />
+                  variants={itemVariants}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TeamMemberCard
+                    name={member.name}
+                    role={member.role}
+                    photo={member.photo}
+                    bio={member.bio}
+                  />
+                </motion.div>
               ))}
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="section bg-primary-50">
-        <div className="container-custom">
-          <div className="text-center">
-            <h2 className="section-title">Join Our Team</h2>
-            <p className="section-subtitle">
+      <motion.section 
+        className="section relative bg-cover bg-center"
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(72, 148, 79, 0.9), rgba(72, 148, 79, 0.8)), url(https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
+        }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="container-custom relative z-10">
+          <motion.div 
+            className="text-center text-white"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-4xl md:text-5xl font-display font-bold mb-6"
+              variants={itemVariants}
+            >
+              Join Our Team
+            </motion.h2>
+            <motion.p 
+              className="text-xl mb-8 max-w-3xl mx-auto"
+              variants={itemVariants}
+            >
               We're always looking for talented individuals passionate about sustainable energy solutions.
-            </p>
-            <div className="mt-8">
-              <a href="#" className="btn-primary">
+            </motion.p>
+            <motion.div variants={itemVariants}>
+              <a href="#" className="btn-accent text-lg px-8 py-4">
                 View Open Positions
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };
