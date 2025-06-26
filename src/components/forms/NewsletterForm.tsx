@@ -57,7 +57,7 @@ const NewsletterForm: React.FC = () => {
             />
             <motion.button
               type="submit"
-              className="btn-primary px-6 py-3 whitespace-nowrap font-semibold"
+              className="btn-primary px-6 py-3 whitespace-nowrap font-semibold w-full"
               disabled={isSubmitting}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -66,7 +66,7 @@ const NewsletterForm: React.FC = () => {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                  className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                  className="w-5 h-5 border-2 border-white border-t-transparent rounded-full "
                 />
               ) : (
                 'Subscribe'

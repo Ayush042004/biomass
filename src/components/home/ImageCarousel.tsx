@@ -140,7 +140,7 @@ const ImageCarousel: React.FC = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="container-custom text-white text-center">
               <motion.h2 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary-300"
                 variants={textVariants}
                 initial="enter"
                 animate="center"

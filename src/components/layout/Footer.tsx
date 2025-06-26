@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react';
 import Logo from '../ui/Logo';
-import NewsletterForm from '../forms/NewsletterForm';
 
 const Footer: React.FC = () => {
   return (
@@ -10,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Column 1: Logo and About */}
-          <div>
+          <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-4">
               <Logo size={40} color="white" />
               <span className="ml-2 text-xl font-bold font-display tracking-tight">Nature Biomass</span>
@@ -35,7 +34,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
+          <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-4 font-display tracking-tight">Quick Links</h3>
             <ul className="space-y-2">
               <li>
@@ -67,7 +66,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Column 3: Research */}
-          <div>
+          <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-4 font-display tracking-tight">Research Areas</h3>
             <ul className="space-y-2">
               <li>
@@ -93,13 +92,21 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 font-display tracking-tight">Subscribe to Our Newsletter</h3>
-            <p className="text-gray-400 mb-4 text-body leading-relaxed">
-              Stay updated with our latest news and research developments.
-            </p>
-            <NewsletterForm />
+          {/* Column 4: Contact Info */}
+          <div className="lg:col-span-1">
+            <h3 className="text-lg font-bold mb-4 font-display tracking-tight">Contact Info</h3>
+            <div className="space-y-3">
+              <p className="text-gray-400 font-medium">
+                123 Renewable Way<br />
+                Green City, CA 94103
+              </p>
+              <p className="text-gray-400 font-medium">
+                +1 (555) 123-4567
+              </p>
+              <p className="text-gray-400 font-medium">
+                info@naturebiomass.com
+              </p>
+            </div>
           </div>
         </div>
 

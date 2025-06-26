@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import FAQ from 'react-faq-component';
 import { fuels } from '../../data/fuels';
 

@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
 
     return () => clearInterval(interval);
   }, []);
-
+//card features
   const stats = [
     {
       number: "46%",
@@ -140,12 +140,12 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="h-20 flex items-center justify-center"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-primary-300">
                 {rotatingTexts[currentTextIndex]}
               </h1>
             </motion.div>
             <motion.p 
-              className="text-xl md:text-2xl mb-8 text-primary-100 max-w-3xl mx-auto"
+              className="text-xl md:text-2xl mb-8 mt-28 text-primary-100 max-w-3xl mx-auto text-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
