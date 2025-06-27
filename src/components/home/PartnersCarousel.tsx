@@ -47,7 +47,7 @@ const PartnersCarousel: React.FC = () => {
         >
           <h2 className="section-title">Our Partners</h2>
           <p className="section-subtitle">
-            We collaborate with leading organizations committed to sustainable energy solutions.
+          Trusted by national brands and global MNCs for reliable biomass fuel supply and turnkey boiler systems.
           </p>
         </motion.div>
         

@@ -51,47 +51,27 @@ const HomePage: React.FC = () => {
 
   const testimonials = [
     {
-      quote: "Nature Biomass Solutions has transformed our energy infrastructure, reducing our carbon footprint while saving us money. Their innovative approach exceeded our expectations.",
+      quote: "Nature Bio Works has been instrumental in supporting our shift toward clean energy. Their biomass briquettes and RDF fuels have helped us significantly reduce our carbon footprint and meet internal ESG benchmarks — all without compromising operational efficiency.",
       author: "Sarah Chen",
-      role: "Operations Director, GreenTech Industries",
+      role: "Sustainability Head, Leading Beverage Manufacturer",
       image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
       rating: 5
     },
     {
-      quote: "Their innovative approach to biomass solutions has set new standards in sustainable energy production. The team's expertise is unmatched in the industry.",
-      author: "Michael Rodriguez",
-      role: "CEO, EcoSystems Global",
-      image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
-      rating: 5
-    },
-    {
-      quote: "The expertise and dedication of their team made our transition to biomass energy seamless and efficient. Outstanding results from day one.",
+      quote: "Their team brought deep technical expertise and a turnkey solution to the table. From fuel supply to boiler integration, the entire transition was seamless — a rare combination of reliability, innovation, and environmental commitment.",
       author: "Emma Thompson",
-      role: "Sustainability Manager, CleanEnergy Alliance",
+      role: "Energy Manager, Global Consumer Goods Company",
       image: "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg",
       rating: 5
     },
     {
-      quote: "Working with Nature Biomass has been a game-changer for our manufacturing operations. Their solutions are both cost-effective and environmentally responsible.",
+      quote: "Nature Bio Works has consistently delivered high-quality biomass fuel solutions at scale. Their ability to convert waste into energy not only meets regulatory expectations but supports our long-term sustainability roadmap.",
       author: "David Park",
-      role: "Plant Manager, Industrial Solutions Inc",
+      role: "VP - Environment & Compliance, Major Infrastructure Group",
       image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg",
       rating: 5
     },
-    {
-      quote: "The technical support and ongoing maintenance services are exceptional. They truly care about their clients' long-term success.",
-      author: "Lisa Martinez",
-      role: "Energy Manager, Manufacturing Corp",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
-      rating: 5
-    },
-    {
-      quote: "Their biomass solutions have helped us achieve our sustainability goals while improving our bottom line. Highly recommended for any business looking to go green.",
-      author: "James Wilson",
-      role: "Facilities Director, Tech Innovations Ltd",
-      image: "https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg",
-      rating: 5
-    }
+    
   ];
 
   const containerVariants = {
@@ -187,10 +167,8 @@ const HomePage: React.FC = () => {
             <motion.div variants={itemVariants}>
               <h2 className="text-3xl font-bold mb-6">About Nature Biomass</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Since 2010, we've been at the forefront of sustainable energy solutions, 
-                helping businesses transition to cleaner, more efficient biomass technologies. 
-                Our innovative approach combines cutting-edge engineering with environmental 
-                responsibility.
+              Established in 2021, Nature Bio Works has been a pioneer in delivering advanced sustainable energy solutions. We specialize in enabling industrial and institutional clients to transition seamlessly from fossil fuels to high-efficiency biomass technologies. 
+              Our operations are driven by a deep commitment to environmental stewardship, supported by state-of-the-art engineering and innovative waste-to-energy systems.
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link to="/about" className="btn-primary">

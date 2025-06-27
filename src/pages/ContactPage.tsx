@@ -134,9 +134,9 @@ const ContactPage: React.FC = () => {
                       title: "Our Office",
                       content: (
                         <>
-                          123 Renewable Way<br />
-                          Green City, CA 94103<br />
-                          United States
+                          B-44,1st Floor,<br />
+                          Noida Sector 64, Gautam Buddha Nagar<br />
+                          Uttar Pradesh, India
                         </>
                       )
                     },
@@ -145,8 +145,8 @@ const ContactPage: React.FC = () => {
                       title: "Phone",
                       content: (
                         <>
-                          +1 (555) 123-4567<br />
-                          <span className="text-gray-500 text-sm">Monday-Friday, 9am-5pm PST</span>
+                          012-0444-4600, +91 98736 94143 , 9625979877<br />
+                          <span className="text-gray-500 text-sm">Monday-Friday, 9am-5pm IST</span>
                         </>
                       )
                     },
@@ -155,7 +155,7 @@ const ContactPage: React.FC = () => {
                       title: "Email",
                       content: (
                         <>
-                          info@naturebiomass.com<br />
+                          Info@naturebioworks.in<br />
                           <span className="text-gray-500 text-sm">We respond within 24 hours</span>
                         </>
                       )

@@ -118,7 +118,7 @@ const FuelsOverviewPage: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {fuels.map((fuel, index) => (
+            {fuels.map((fuel, _) => (
               <motion.div
                 key={fuel.id}
                 variants={cardVariants}

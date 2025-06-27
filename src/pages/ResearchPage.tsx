@@ -50,7 +50,7 @@ const ResearchPage: React.FC = () => {
   return (
     <>
       <motion.section 
-        className="relative bg-cover bg-center py-32 min-h-[70vh] flex items-center"
+        className="relative bg-cover bg-center py-20 min-h-[70vh] flex items-center"
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
         }}
@@ -71,11 +71,14 @@ const ResearchPage: React.FC = () => {
             >
               Research & Development
             </motion.h1>
+            <motion.h2 className='text-1xl md:text-3xl text-gray-100 max-w-3xl mt-5'>
+            Engineering the Future of Circular Bioenergy
+            </motion.h2>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl"
+              className="text-xl md:text-2xl text-gray-100 max-w-3xl mt-5"
               variants={itemVariants}
             >
-              Pioneering the future of sustainable biomass technology through innovative research and development.
+              At Nature Bio Works, innovation isn’t a department — it’s the foundation of our mission. Our in-house R&D capabilities are focused on developing next-generation biomass and waste-to-energy technologies that are scalable, efficient, and climate-resilient.
             </motion.p>
           </motion.div>
         </div>
@@ -102,25 +105,29 @@ const ResearchPage: React.FC = () => {
                 className="text-lg mb-8 text-gray-700 leading-relaxed"
                 variants={itemVariants}
               >
-                Our R&D team is dedicated to pushing the boundaries of biomass technology, 
-                developing new solutions that maximize efficiency while minimizing environmental impact.
+             Our R&D team blends environmental science with precision engineering to deliver disruptive solutions in biomass utilization and waste valorization.
               </motion.p>
               <div className="space-y-6">
                 {[
                   {
                     number: "1",
-                    title: "Advanced Combustion Technology",
-                    description: "Developing next-generation combustion systems for improved efficiency and reduced emissions."
+                    title: " Thermal Conversion Technologies",
+                    description: "Advancing torrefaction and pyrolysis techniques to create high-density, low-emission biofuels from agricultural and municipal waste streams."
                   },
                   {
                     number: "2",
-                    title: "Smart Control Systems",
-                    description: "Creating intelligent monitoring and control systems for optimal performance."
+                    title: " Waste Segregation & Preprocessing",
+                    description: "Developing smart systems for real-time sorting, moisture control, and contamination removal to improve input quality and energy yield."
                   },
                   {
                     number: "3",
-                    title: "Sustainable Materials",
-                    description: "Researching new biomass materials and processing techniques for improved efficiency."
+                    title: "Emission Management & Compliance Tech",
+                    description: "Designing modular pollution control systems including bag filters, ID/FD fans, and wet scrubbers aligned with CPCB and EU standards."
+                  },
+                  {
+                    number: "4",
+                    title: "Decentralized Bioenergy Units",
+                    description: "Prototyping compact, rooftop-scale biogas and pellet units for institutional campuses and rural clusters — reducing energy inequity."
                   }
                 ].map((item, index) => (
                   <motion.div 
@@ -190,7 +197,7 @@ const ResearchPage: React.FC = () => {
               className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
               variants={itemVariants}
             >
-              Current Research Projects
+              Ongoing Research Initiatives
             </motion.h2>
             <motion.p 
               className="text-xl text-primary-700 max-w-3xl mx-auto"
@@ -210,21 +217,27 @@ const ResearchPage: React.FC = () => {
             {[
               {
                 icon: "🔬",
-                title: "Biomass Optimization",
-                description: "Investigating new methods to improve biomass fuel efficiency and reduce waste in the conversion process.",
+                title: "Fuel Performance Optimization",
+                description: "Analyzing torrefied vs. non-torrefied pellets across various feedstocks to enhance combustion efficiency and lifecycle performance.",
                 progress: 85
               },
               {
                 icon: "🌿",
-                title: "Emission Control",
-                description: "Developing advanced filtration systems to minimize environmental impact of biomass energy production.",
+                title: "Carbon Impact & Biochar Utilization",
+                description: "Studying carbon sequestration potential of biochar and its application in regenerative agriculture and soil restoration.",
                 progress: 70
               },
               {
                 icon: "🤖",
-                title: "AI Integration",
-                description: "Implementing artificial intelligence for predictive maintenance and optimization of biomass systems.",
+                title: "Automation & AI in Waste Management",
+                description: "Building AI-driven systems for predictive maintenance, fuel quality monitoring, and process automation within pellet plants.",
                 progress: 60
+              },
+              {
+                icon: "📈",
+                title: " Policy-Linked Tech Integration",
+                description: "Aligning R&D with India’s SATAT, Swachh Bharat, and Net Zero targets — ensuring our technologies qualify for MNRE and RBI-linked incentives.",
+                progress: 90
               }
             ].map((project, index) => (
               <motion.div 

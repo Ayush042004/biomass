@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <motion.section 
-        className="relative bg-cover bg-center py-32 min-h-[70vh] flex items-center"
+        className="relative bg-cover bg-center py-20 min-h-[70vh] flex items-center"
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/4491881/pexels-photo-4491881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
         }}
@@ -84,10 +84,11 @@ const AboutPage: React.FC = () => {
               About Us
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl"
+              className="text-xl md:text-2xl text-gray-100 max-w-3xl mt-20"
               variants={itemVariants}
             >
-              Leading the transition to sustainable biomass energy solutions since 2010.
+               Established in 2021, Nature Bio Works has been a pioneer in delivering advanced sustainable energy solutions. We specialize in enabling industrial and institutional clients to transition seamlessly from fossil 
+               fuels to high-efficiency biomass technologies. Our operations are driven by a deep commitment to environmental stewardship, supported by state-of-the-art engineering and innovative waste-to-energy systems.
             </motion.p>
           </motion.div>
         </div>
@@ -114,19 +115,19 @@ const AboutPage: React.FC = () => {
                 className="text-lg mb-6 text-gray-700 leading-relaxed"
                 variants={itemVariants}
               >
-                At Nature Biomass Solutions, we're dedicated to revolutionizing the energy industry by providing sustainable biomass alternatives that reduce environmental impact while meeting modern energy needs.
+                At Nature Bio Works, our mission is to lead the transition toward a cleaner, more sustainable energy future by delivering high-performance biomass solutions that address both environmental and industrial challenges.
               </motion.p>
               <motion.p 
                 className="text-lg mb-6 text-gray-700 leading-relaxed"
                 variants={itemVariants}
               >
-                Our mission is to accelerate the global transition away from fossil fuels by making biomass energy solutions accessible, efficient, and economically viable for businesses across all sectors.
+                We are committed to replacing fossil fuels with renewable, carbon-neutral biomass fuels—enabling industries to significantly reduce emissions while maintaining operational efficiency and cost-effectiveness.
               </motion.p>
               <motion.p 
                 className="text-lg mb-8 text-gray-700 leading-relaxed"
-                variants={itemVariants}
+                variants={itemVariants} 
               >
-                We believe that sustainable energy is not just an environmental imperative but also a tremendous business opportunity. By harnessing the power of biomass, we help our clients reduce their carbon footprint while improving their bottom line.
+                We view sustainable energy not only as an environmental necessity but as a strategic lever for business growth. Through innovation, engineering excellence, and deep sectoral expertise, we empower our clients to meet their ESG goals, reduce their carbon footprint, and unlock new value from waste.
               </motion.p>
               <motion.div variants={itemVariants}>
                 <Link to="/contact" className="btn-primary">
@@ -179,13 +180,14 @@ const AboutPage: React.FC = () => {
               className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
               variants={itemVariants}
             >
-              Our Values
+              Our Core Values
             </motion.h2>
             <motion.p 
               className="text-xl text-primary-700 max-w-3xl mx-auto"
               variants={itemVariants}
             >
-              These core principles guide everything we do at Nature Biomass Solutions.
+              At Nature Bio Works, our work is anchored in principles that reflect our long-term commitment to environmental stewardship, technical excellence, and shared progress.
+
             </motion.p>
           </motion.div>
 
@@ -200,17 +202,17 @@ const AboutPage: React.FC = () => {
               {
                 icon: "🌱",
                 title: "Sustainability",
-                description: "We're committed to environmental responsibility in everything we do, from sourcing materials to designing energy-efficient systems."
+                description: "We are unwavering in our commitment to climate-positive action. From waste sourcing to system deployment, every solution we deliver is designed to minimize environmental impact and maximize resource efficiency."
               },
               {
                 icon: "💡",
                 title: "Innovation",
-                description: "We constantly push the boundaries of biomass technology to deliver more efficient, cost-effective, and environmentally friendly solutions."
+                description: "We challenge conventional norms by continuously advancing biomass technologies. Our solutions are driven by R&D, precision engineering, and a deep understanding of energy transition needs."
               },
               {
                 icon: "🤝",
                 title: "Partnership",
-                description: "We build long-term relationships with our clients, partners, and communities, working together to create a more sustainable future."
+                description: "We believe real impact is made through collaboration. Whether with corporates, governments, farmers, or communities — we co-create solutions that are resilient, inclusive, and future-ready."
               }
             ].map((value, index) => (
               <motion.div 
@@ -236,82 +238,7 @@ const AboutPage: React.FC = () => {
         </div>
       </motion.section>
 
-      <motion.section 
-        className="section"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="container-custom">
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-16 text-center text-primary-800"
-              variants={itemVariants}
-            >
-              Our Journey
-            </motion.h2>
-            <div className="space-y-16">
-              {[
-                {
-                  year: "2010",
-                  title: "Company Founded",
-                  description: "Nature Biomass Solutions was established with a vision to revolutionize the biomass energy sector, starting with a small team of engineers and environmental scientists."
-                },
-                {
-                  year: "2013",
-                  title: "First Major Installation",
-                  description: "Completed our first large-scale industrial biomass boiler installation, reducing the client's carbon emissions by 60% and energy costs by 40%."
-                },
-                {
-                  year: "2017",
-                  title: "International Expansion",
-                  description: "Expanded operations into European and Asian markets, establishing key partnerships with biomass suppliers and local energy companies."
-                },
-                {
-                  year: "2020",
-                  title: "Innovation Award",
-                  description: "Received the Global Clean Energy Innovation Award for our high-efficiency biomass conversion technology."
-                },
-                {
-                  year: "2023",
-                  title: "Carbon Neutral Certification",
-                  description: "Achieved carbon neutral status for all operations and launched our comprehensive Electrification Roadmap service to help clients transition to clean energy."
-                }
-              ].map((milestone, index) => (
-                <motion.div 
-                  key={index}
-                  className="flex flex-col md:flex-row gap-8 items-center"
-                  variants={itemVariants}
-                >
-                  <motion.div 
-                    className="md:w-1/4 flex flex-col items-center md:items-start"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white text-2xl font-bold py-4 px-6 rounded-xl shadow-lg">
-                      {milestone.year}
-                    </div>
-                  </motion.div>
-                  <motion.div 
-                    className="md:w-3/4 bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    whileHover={{ y: -5 }}
-                  >
-                    <h3 className="text-2xl font-display font-bold mb-4 text-primary-800">{milestone.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
-                  </motion.div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
+     
 
       <motion.section 
         className="section relative bg-cover bg-center"

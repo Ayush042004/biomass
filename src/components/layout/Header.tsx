@@ -136,9 +136,9 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
           >
-            <Link to="/" className="flex items-center">
-              <Logo size={40} />
-              <span className="ml-2 text-xl font-bold text-primary-800 font-display tracking-tight">Nature Biomass</span>
+            <Link to="/" className="flex items-center mr-4">
+              <Logo size={70} color='white' />
+              <span className="ml-1 text-xl font-bold text-primary-800 font-display tracking-tight">Nature Biomass</span>
             </Link>
           </motion.div>
 
@@ -275,7 +275,7 @@ const Header: React.FC = () => {
             </motion.div>
           </nav>
 
-          <div className="hidden lg:block">
+          <div className="hidden lg:block ">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link to="/contact" className="btn-primary">
                 Contact Us
