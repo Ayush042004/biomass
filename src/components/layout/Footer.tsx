@@ -11,23 +11,23 @@ const Footer: React.FC = () => {
           {/* Column 1: Logo and About */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-4">
-              <Logo size={40} color="white" />
+              <Logo size ={60} color="white" />
               <span className="ml-2 text-xl font-bold font-display tracking-tight">Nature Biomass</span>
             </Link>
             <p className="text-gray-400 mb-4 text-body leading-relaxed">
-              Sustainable biomass solutions for a cleaner future. Delivering innovative renewable energy systems since 2010.
+              Sustainable biomass solutions for a cleaner future. Delivering innovative renewable energy systems since 2021.
             </p>
             <div className="flex space-x-4">
-              <a href="https://twitter.com" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="Twitter">
+              <a href="https://x.com/Naturebioworks" target="_blank" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
-              <a href="https://instagram.com" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="Instagram">
+              <a href="https://www.instagram.com/naturebioworks/" target="_blank" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
               <a href="https://linkedin.com" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:info@naturebiomass.com" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="Email">
+              <a href="mailto:Info@naturebioworks.in" className="text-gray-400 hover:text-primary-300 transition-colors duration-200" aria-label="Email">
                 <Mail size={20} />
               </a>
             </div>
@@ -97,14 +97,15 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-4 font-display tracking-tight">Contact Info</h3>
             <div className="space-y-3">
               <p className="text-gray-400 font-medium">
-                123 Renewable Way<br />
-                Green City, CA 94103
+              B-44,1st Floor,
+              Noida Sector 64, Gautam Buddha Nagar
+              Uttar Pradesh, India
               </p>
               <p className="text-gray-400 font-medium">
-                +1 (555) 123-4567
+              012-0444-4600, +91 98736 94143 , 9625979877
               </p>
               <p className="text-gray-400 font-medium">
-                info@naturebiomass.com
+              Info@naturebioworks.in
               </p>
             </div>
           </div>

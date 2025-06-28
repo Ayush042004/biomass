@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
   const [fuelsDropdownOpen, setFuelsDropdownOpen] = useState(false);
-  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [dropdownTimeout, setDropdownTimeout] = useState<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -130,191 +130,196 @@ const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container-custom py-4">
-        <div className="flex items-center justify-between">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Link to="/" className="flex items-center mr-4">
-              <Logo size={70} color='white' />
-              <span className="ml-1 text-xl font-bold text-primary-800 font-display tracking-tight">Nature Biomass</span>
-            </Link>
-          </motion.div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link to="/" className="nav-link font-semibold hover:text-primary-500">
-                Home
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link to="/about" className="nav-link font-semibold hover:text-primary-500">
-                About Us
+      <div className="w-full py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            {/* Logo and Name - Left Side */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="flex-shrink-0 -ml-4 sm:-ml-6 lg:-ml-8"
+            >
+              <Link to="/" className="flex items-center">
+                <Logo size={90} color='white' />
+                <span className="ml-1 text-xl font-bold text-primary-800 font-display tracking-tight">Nature Biomass</span>
               </Link>
             </motion.div>
 
-            {/* Products Dropdown */}
-            <div className="relative">
+            {/* Desktop Navigation - Center */}
+            <nav className="hidden lg:flex items-center space-x-8 flex-1 justify-center">
               <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                <Link
-                  to="/products"
-                  className={`nav-link font-semibold hover:text-primary-500 flex items-center ${
-                    isProductActive ? 'text-primary-500' : ''
-                  }`}
-                  onMouseEnter={() => handleDropdownEnter(setProductsDropdownOpen)}
-                  onMouseLeave={() => handleDropdownLeave(setProductsDropdownOpen)}
-                  onClick={() => toggleDropdown(productsDropdownOpen, setProductsDropdownOpen)}
-                >
-                  Products & Services
-                  <motion.div
-                    animate={{ rotate: productsDropdownOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </motion.div>
+                <Link to="/" className="nav-link font-semibold hover:text-primary-500">
+                  Home
                 </Link>
               </motion.div>
-              <AnimatePresence>
-                {productsDropdownOpen && (
-                  <motion.div
-                    className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
-                    variants={dropdownVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
+              <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                <Link to="/about" className="nav-link font-semibold hover:text-primary-500">
+                  About Us
+                </Link>
+              </motion.div>
+
+              {/* Products Dropdown */}
+              <div className="relative">
+                <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    to="/products"
+                    className={`nav-link font-semibold hover:text-primary-500 flex items-center ${
+                      isProductActive ? 'text-primary-500' : ''
+                    }`}
                     onMouseEnter={() => handleDropdownEnter(setProductsDropdownOpen)}
                     onMouseLeave={() => handleDropdownLeave(setProductsDropdownOpen)}
+                    onClick={() => toggleDropdown(productsDropdownOpen, setProductsDropdownOpen)}
                   >
-                    {productLinks.map((link, index) => (
-                      <motion.div
-                        key={link.path}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <Link
-                          to={link.path}
-                          className={`block px-4 py-2 text-gray-800 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200 font-medium ${
-                            location.pathname === link.path ? 'bg-primary-50 text-primary-600' : ''
-                          }`}
+                    Products & Services
+                    <motion.div
+                      animate={{ rotate: productsDropdownOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown className="ml-1 h-4 w-4" />
+                    </motion.div>
+                  </Link>
+                </motion.div>
+                <AnimatePresence>
+                  {productsDropdownOpen && (
+                    <motion.div
+                      className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
+                      variants={dropdownVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="hidden"
+                      onMouseEnter={() => handleDropdownEnter(setProductsDropdownOpen)}
+                      onMouseLeave={() => handleDropdownLeave(setProductsDropdownOpen)}
+                    >
+                      {productLinks.map((link, index) => (
+                        <motion.div
+                          key={link.path}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
                         >
-                          {link.name}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                          <Link
+                            to={link.path}
+                            className={`block px-4 py-2 text-gray-800 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200 font-medium ${
+                              location.pathname === link.path ? 'bg-primary-50 text-primary-600' : ''
+                            }`}
+                          >
+                            {link.name}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
-            {/* Biomass Fuels Dropdown */}
-            <div className="relative">
-              <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-                <Link
-                  to="/fuels"
-                  className={`nav-link font-semibold hover:text-primary-500 flex items-center ${
-                    isFuelActive ? 'text-primary-500' : ''
-                  }`}
-                  onMouseEnter={() => handleDropdownEnter(setFuelsDropdownOpen)}
-                  onMouseLeave={() => handleDropdownLeave(setFuelsDropdownOpen)}
-                  onClick={() => toggleDropdown(fuelsDropdownOpen, setFuelsDropdownOpen)}
-                >
-                  Biomass Fuels
-                  <motion.div
-                    animate={{ rotate: fuelsDropdownOpen ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ChevronDown className="ml-1 h-4 w-4" />
-                  </motion.div>
-                </Link>
-              </motion.div>
-              <AnimatePresence>
-                {fuelsDropdownOpen && (
-                  <motion.div
-                    className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
-                    variants={dropdownVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
+              {/* Biomass Fuels Dropdown */}
+              <div className="relative">
+                <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                  <Link
+                    to="/fuels"
+                    className={`nav-link font-semibold hover:text-primary-500 flex items-center ${
+                      isFuelActive ? 'text-primary-500' : ''
+                    }`}
                     onMouseEnter={() => handleDropdownEnter(setFuelsDropdownOpen)}
                     onMouseLeave={() => handleDropdownLeave(setFuelsDropdownOpen)}
+                    onClick={() => toggleDropdown(fuelsDropdownOpen, setFuelsDropdownOpen)}
                   >
-                    {fuelLinks.map((link, index) => (
-                      <motion.div
-                        key={link.path}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                      >
-                        <Link
-                          to={link.path}
-                          className={`block px-4 py-2 text-gray-800 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200 font-medium ${
-                            location.pathname === link.path ? 'bg-primary-50 text-primary-600' : ''
-                          }`}
+                    Biomass Fuels
+                    <motion.div
+                      animate={{ rotate: fuelsDropdownOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ChevronDown className="ml-1 h-4 w-4" />
+                    </motion.div>
+                  </Link>
+                </motion.div>
+                <AnimatePresence>
+                  {fuelsDropdownOpen && (
+                    <motion.div
+                      className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 border border-gray-100"
+                      variants={dropdownVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="hidden"
+                      onMouseEnter={() => handleDropdownEnter(setFuelsDropdownOpen)}
+                      onMouseLeave={() => handleDropdownLeave(setFuelsDropdownOpen)}
+                    >
+                      {fuelLinks.map((link, index) => (
+                        <motion.div
+                          key={link.path}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
                         >
-                          {link.name}
-                        </Link>
-                      </motion.div>
-                    ))}
+                          <Link
+                            to={link.path}
+                            className={`block px-4 py-2 text-gray-800 hover:bg-primary-50 hover:text-primary-600 transition-colors duration-200 font-medium ${
+                              location.pathname === link.path ? 'bg-primary-50 text-primary-600' : ''
+                            }`}
+                          >
+                            {link.name}
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                <Link to="/team" className="nav-link font-semibold hover:text-primary-500">
+                  Team
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+                <Link to="/research" className="nav-link font-semibold hover:text-primary-500">
+                  Research & Development
+                </Link>
+              </motion.div>
+            </nav>
+
+            {/* Contact Us Button - Right Side */}
+            <div className="hidden lg:block flex-shrink-0 -mr-4 sm:-mr-6 lg:-mr-8">
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Link to="/contact" className="btn-primary">
+                  Contact Us
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <motion.button
+              className="lg:hidden flex items-center p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <AnimatePresence mode="wait">
+                {isOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <X size={24} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Menu size={24} />
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
-
-            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link to="/team" className="nav-link font-semibold hover:text-primary-500">
-                Team
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link to="/research" className="nav-link font-semibold hover:text-primary-500">
-                Research & Development
-              </Link>
-            </motion.div>
-          </nav>
-
-          <div className="hidden lg:block ">
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/contact" className="btn-primary">
-                Contact Us
-              </Link>
-            </motion.div>
+            </motion.button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <motion.button
-            className="lg:hidden flex items-center p-2 rounded-md hover:bg-gray-100 transition-colors duration-200"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <AnimatePresence mode="wait">
-              {isOpen ? (
-                <motion.div
-                  key="close"
-                  initial={{ rotate: -90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: 90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <X size={24} />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="menu"
-                  initial={{ rotate: 90, opacity: 0 }}
-                  animate={{ rotate: 0, opacity: 1 }}
-                  exit={{ rotate: -90, opacity: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Menu size={24} />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.button>
         </div>
       </div>
 

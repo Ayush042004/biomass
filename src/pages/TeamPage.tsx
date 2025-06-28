@@ -51,11 +51,11 @@ const TeamPage: React.FC = () => {
             >
               Our Team
             </motion.h1>
-            <motion.h2 className='text-1xl md:text-3xl text-gray-100 max-w-3xl mt-5'>
+            <motion.h5 className='text-xl md:text-3xl text-gray-100 max-w-3xl mt-5'>
             Visionaries. Engineers. Changemakers.
-            </motion.h2>
+            </motion.h5>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl mt-5"
+              className="text-sm md:text-xl text-gray-100 max-w-3xl mt-5"
               variants={itemVariants}
             >
               At Nature Bio Works, our strength lies in the expertise and foresight of our people. From leadership to advisory, every member brings unique capabilities to advance our mission of sustainable energy transformation.
@@ -211,7 +211,7 @@ const TeamPage: React.FC = () => {
             </motion.p>
             <motion.div variants={itemVariants}>
               <a href="#" className="btn-accent text-lg px-8 py-4">
-                View Open Positions
+                Mail us your resume 
               </a>
             </motion.div>
           </motion.div>

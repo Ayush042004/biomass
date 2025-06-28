@@ -2,30 +2,45 @@ export interface Partner {
   name: string;
   logo: string;
 }
-
+import ntpc from '../assets/ntpc.png';
+import v3 from '../assets/v3.jpg';
+import cocacola from '../assets/cocacola.jpg';
+import mercury from '../assets/Mercurylogo.png';
+import shreeji from '../assets/shreeji.jpg';
+import weavetex from '../assets/weavetex.jpg';
+import ssf from '../assets/ssf.png';
+import shiroki from '../assets/shiroki.jpg';
 export const partners: Partner[] = [
   {
-    name: 'EcoTech Solutions',
-    logo: 'https://placehold.co/200x100/00796B/white?text=EcoTech'
+    name: 'NTPC',
+    logo: ntpc
   },
   {
-    name: 'BioEnergy Global',
-    logo: 'https://placehold.co/200x100/1B5E20/white?text=BioEnergy'
+    name: 'Varun Beverages',
+    logo: v3
   },
   {
-    name: 'Sustainable Power',
-    logo: 'https://placehold.co/200x100/2E7D32/white?text=SustainablePower'
+    name: 'Coca-Cola',
+    logo: cocacola
   },
   {
-    name: 'GreenFuture Inc',
-    logo: 'https://placehold.co/200x100/388E3C/white?text=GreenFuture'
+    name: 'Mercury',
+    logo: mercury
   },
   {
-    name: 'BiomassInnovate',
-    logo: 'https://placehold.co/200x100/43A047/white?text=BiomassInnovate'
+    name: 'Shreeji',
+    logo: shreeji
   },
   {
-    name: 'CleanTech Partners',
-    logo: 'https://placehold.co/200x100/4CAF50/white?text=CleanTech'
+    name: 'Weavetex',
+    logo: weavetex
+  },
+  {
+    name: 'SSF',
+    logo: ssf
+  },
+  {
+    name: 'Shiroki',
+    logo: shiroki
   }
 ];
