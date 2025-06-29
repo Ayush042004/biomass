@@ -97,60 +97,37 @@ const PartnersCarousel: React.FC = () => {
                 key={index} 
                 className="relative group cursor-pointer"
                 variants={itemVariants}
-                whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.3 }
-                }}
               >
                 {/* Partner Card */}
                 <motion.div
-                  className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                  className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md transition-all duration-300 relative overflow-hidden"
                   whileHover={{ 
-                    scale: 1.05,
+                    scale: 1.1,
+                    y: -5,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                     transition: { duration: 0.3 }
                   }}
                 >
                   {/* Company Logo */}
-                  <motion.img 
+                  <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="max-h-full max-w-full object-contain transition-all duration-300"
-                    whileHover={{ 
-                      scale: 1.1,
-                      transition: { duration: 0.3 }
-                    }}
+                    className="max-h-full max-w-full object-contain brightness-75 hover:brightness-100 transition-all duration-300"
                   />
                   
                   {/* Subtle Glow Effect on Hover */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-accent-400/10 rounded-lg opacity-0"
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-
-                  {/* Hover Indicator - appears on first logo only */}
-                  {index === 0 && (
-                    <motion.div
-                      className="absolute -top-2 -right-2 w-4 h-4 bg-primary-500 rounded-full flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300"
-                      animate={{ 
-                        scale: [1, 1.2, 1],
-                        opacity: [0.7, 1, 0.7]
-                      }}
-                      transition={{ 
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <span className="text-white text-xs">?</span>
-                    </motion.div>
-                  )}
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-accent-400/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
 
-                {/* Company Name at Bottom */}
+                {/* Company Name Tooltip - Only shows on logo hover */}
                 <motion.div
-                  className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                  className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-10"
                   initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                  animate={{ 
+                    opacity: 0, 
+                    y: 10, 
+                    scale: 0.8
+                  }}
                   whileHover={{ 
                     opacity: 1, 
                     y: 0, 
@@ -160,20 +137,14 @@ const PartnersCarousel: React.FC = () => {
                       ease: "easeOut"
                     }
                   }}
+                  className="group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 opacity-0 translate-y-2 scale-90 transition-all duration-300"
                 >
-                  <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-3 py-1 rounded-full shadow-lg">
+                  <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-4 py-2 rounded-lg shadow-lg">
                     <span className="text-sm font-semibold">{partner.name}</span>
                   </div>
                   
                   {/* Small Arrow pointing up */}
-                  <motion.div
-                    className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary-500 rotate-45"
-                    initial={{ scale: 0 }}
-                    whileHover={{ 
-                      scale: 1,
-                      transition: { delay: 0.1, duration: 0.2 }
-                    }}
-                  />
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary-500 rotate-45" />
                 </motion.div>
               </motion.div>
             ))}
