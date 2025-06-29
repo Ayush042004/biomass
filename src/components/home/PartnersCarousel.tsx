@@ -99,75 +99,26 @@ const PartnersCarousel: React.FC = () => {
                 variants={itemVariants}
               >
                 {/* Partner Card */}
-                <motion.div
-                  className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md transition-all duration-300 border-2 border-transparent"
-                  whileHover={{ 
-                    scale: 1.1,
-                    y: -5,
-                    borderColor: "#48944f", // Green border on hover
-                    boxShadow: "0 10px 25px rgba(72, 148, 79, 0.2)",
-                    transition: { 
-                      duration: 0.3,
-                      ease: "easeOut"
-                    }
-                  }}
-                  initial={{
-                    scale: 1,
-                    y: 0,
-                    borderColor: "transparent"
-                  }}
-                >
+                <div className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary-500 group-hover:scale-110 group-hover:-translate-y-2">
                   {/* Company Logo */}
                   <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="max-h-full max-w-full object-contain"
+                    className="max-h-full max-w-full object-contain transition-all duration-300"
                   />
-                </motion.div>
+                </div>
 
-                {/* Company Name - Shows on hover with larger size */}
-                <motion.div
-                  className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-20 opacity-0 group-hover:opacity-100"
-                  initial={{ 
-                    opacity: 0, 
-                    y: 10, 
-                    scale: 0.8 
-                  }}
-                  animate={{
-                    opacity: 0,
-                    y: 10,
-                    scale: 0.8
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut"
-                  }}
-                  style={{
-                    transition: 'all 0.3s ease-out'
-                  }}
-                >
-                  <motion.div 
-                    className="bg-white text-primary-800 px-4 py-2 rounded-lg shadow-lg border-2 border-transparent group-hover:border-primary-500 group-hover:bg-primary-50"
-                    style={{
-                      transition: 'all 0.3s ease-out'
-                    }}
-                  >
-                    <span 
-                      className="text-base font-semibold"
-                      style={{
-                        transform: 'scale(1.2)',
-                        display: 'inline-block',
-                        transition: 'transform 0.3s ease-out'
-                      }}
-                    >
+                {/* Company Name Tooltip - Shows on hover */}
+                <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="bg-white text-primary-800 px-4 py-2 rounded-lg shadow-lg border-2 border-transparent group-hover:border-primary-500 group-hover:bg-primary-50 transition-all duration-300">
+                    <span className="text-base font-semibold group-hover:scale-125 inline-block transition-transform duration-300">
                       {partner.name}
                     </span>
-                  </motion.div>
+                  </div>
                   
-                  {/* Arrow pointing up */}
-                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-l-2 border-t-2 border-primary-500 group-hover:bg-primary-50" 
-                       style={{ transition: 'all 0.3s ease-out' }} />
-                </motion.div>
+                  {/* Arrow pointing up to the logo */}
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-l-2 border-t-2 border-transparent group-hover:border-primary-500 group-hover:bg-primary-50 transition-all duration-300" />
+                </div>
               </motion.div>
             ))}
           </div>
