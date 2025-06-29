@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-4">
               <Logo size ={60} color="white" />
-              <span className="ml-2 text-xl font-bold font-display tracking-tight">Nature Biomass</span>
+              <span className="ml-2 text-xl font-bold font-display tracking-tight">Nature Bio Works</span>
             </Link>
             <p className="text-gray-400 mb-4 text-body leading-relaxed">
               Sustainable biomass solutions for a cleaner future. Delivering innovative renewable energy systems since 2021.
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
         <div className="pt-8 border-t border-gray-800 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0 font-medium">
-              © {new Date().getFullYear()} Nature Biomass Solutions. All rights reserved.
+              © {new Date().getFullYear()} Nature Bio Works. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link to="/privacy-policy" className="text-gray-500 text-sm hover:text-primary-300 font-medium">

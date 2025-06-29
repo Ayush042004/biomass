@@ -61,7 +61,7 @@ const PartnersCarousel: React.FC = () => {
             {partners.map((partner, index) => (
               <motion.div 
                 key={index} 
-                className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-500 p-4 bg-white rounded-lg shadow-md hover:shadow-xl"
+                className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center   transition-all duration-500 p-4 bg-white rounded-lg shadow-md hover:shadow-xl"
                 variants={itemVariants}
                 whileHover={{ 
                   scale: 1.1,
@@ -72,7 +72,7 @@ const PartnersCarousel: React.FC = () => {
                 <img 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="max-h-full max-w-full object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                  className="max-h-full max-w-full object-contain  brightness-75 hover:brightness-100 transition-all duration-300"
                 />
               </motion.div>
             ))}

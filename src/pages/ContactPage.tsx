@@ -385,14 +385,14 @@ const ContactPage: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0627379799256!2d-122.41941658468204!3d37.77492977975791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8272.302707160778!2d77.37043668769347!3d28.614410635538114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a067afde25%3A0x82d24bd1cd9ffc00!2sNATURE%20BIO%20WORKS%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1751179347612!5m2!1sen!2sin"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Nature Biomass Solutions Office Location"
+              title="Nature Bio Works Office Location"
             ></iframe>
           </motion.div>
         </div>

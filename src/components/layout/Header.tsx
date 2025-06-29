@@ -141,7 +141,7 @@ const Header: React.FC = () => {
             >
               <Link to="/" className="flex items-center">
                 <Logo size={90} color='white' />
-                <span className="ml-1 text-xl font-bold text-primary-800 font-display tracking-tight">Nature Biomass</span>
+                <span className="ml-1 text-xl font-bold text-primary-800 font-display tracking-tight">Nature Bio Works</span>
               </Link>
             </motion.div>
 

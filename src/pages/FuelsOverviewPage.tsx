@@ -73,7 +73,7 @@ const FuelsOverviewPage: React.FC = () => {
               Biomass Fuels
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl"
+              className="text-sm md:text-xl text-gray-100 max-w-3xl"
               variants={itemVariants}
             >
               Discover our range of sustainable biomass fuel solutions.

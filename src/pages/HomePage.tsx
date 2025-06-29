@@ -165,7 +165,7 @@ const HomePage: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-3xl font-bold mb-6">About Nature Biomass</h2>
+              <h2 className="text-3xl font-bold mb-6">About Nature Bio Works</h2>
               <p className="text-lg text-gray-600 mb-6">
               Established in 2021, Nature Bio Works has been a pioneer in delivering advanced sustainable energy solutions. We specialize in enabling industrial and institutional clients to transition seamlessly from fossil fuels to high-efficiency biomass technologies. 
               Our operations are driven by a deep commitment to environmental stewardship, supported by state-of-the-art engineering and innovative waste-to-energy systems.

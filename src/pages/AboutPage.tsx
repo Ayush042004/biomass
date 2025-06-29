@@ -84,7 +84,7 @@ const AboutPage: React.FC = () => {
               About Us
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl mt-20"
+              className="text-sm md:text-xl text-gray-100 max-w-3xl mt-20"
               variants={itemVariants}
             >
                Established in 2021, Nature Bio Works has been a pioneer in delivering advanced sustainable energy solutions. We specialize in enabling industrial and institutional clients to transition seamlessly from fossil 

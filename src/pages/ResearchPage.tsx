@@ -71,11 +71,11 @@ const ResearchPage: React.FC = () => {
             >
               Research & Development
             </motion.h1>
-            <motion.h2 className='text-1xl md:text-3xl text-gray-100 max-w-3xl mt-5'>
+            <motion.h5 className='text-1xl md:text-3xl text-gray-100 max-w-3xl mt-5'>
             Engineering the Future of Circular Bioenergy
-            </motion.h2>
+            </motion.h5>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl mt-5"
+              className="text-sm md:text-xl text-gray-100 max-w-3xl mt-5"
               variants={itemVariants}
             >
               At Nature Bio Works, innovation isn’t a department — it’s the foundation of our mission. Our in-house R&D capabilities are focused on developing next-generation biomass and waste-to-energy technologies that are scalable, efficient, and climate-resilient.
