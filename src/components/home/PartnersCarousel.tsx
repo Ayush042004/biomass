@@ -100,94 +100,78 @@ const PartnersCarousel: React.FC = () => {
               >
                 {/* Partner Card */}
                 <motion.div
-                  className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+                  className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md transition-all duration-300 border-2 border-transparent"
                   whileHover={{ 
-                    scale: 1.15,
-                    y: -8,
-                    rotateY: 5,
+                    scale: 1.1,
+                    y: -5,
+                    borderColor: "#48944f", // Green border on hover
+                    boxShadow: "0 10px 25px rgba(72, 148, 79, 0.2)",
                     transition: { 
-                      duration: 0.4,
+                      duration: 0.3,
                       ease: "easeOut"
                     }
                   }}
+                  initial={{
+                    scale: 1,
+                    y: 0,
+                    borderColor: "transparent"
+                  }}
                 >
                   {/* Company Logo */}
-                  <motion.img 
+                  <img 
                     src={partner.logo} 
                     alt={partner.name} 
-                    className="max-h-full max-w-full object-contain transition-all duration-500"
-                    whileHover={{
-                      scale: 1.1,
-                      rotate: [0, -2, 2, 0],
-                      transition: {
-                        duration: 0.6,
-                        ease: "easeInOut"
-                      }
-                    }}
-                  />
-                  
-                  {/* Animated Background Gradient on Hover */}
-                  <motion.div 
-                    className="absolute inset-0 bg-gradient-to-br from-primary-100/50 via-accent-100/30 to-primary-200/50 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-500"
-                    initial={{ scale: 0, rotate: 45 }}
-                    whileHover={{ 
-                      scale: 1.2, 
-                      rotate: 0,
-                      transition: { duration: 0.5 }
-                    }}
-                  />
-                  
-                  {/* Subtle Border Animation */}
-                  <motion.div
-                    className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-primary-300 transition-all duration-500"
-                    whileHover={{
-                      borderColor: ["transparent", "#92ce9a", "#48944f", "#92ce9a"],
-                      transition: {
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }
-                    }}
+                    className="max-h-full max-w-full object-contain"
                   />
                 </motion.div>
 
-                {/* Company Name Tooltip - Shows on hover */}
+                {/* Company Name - Shows on hover with larger size */}
                 <motion.div
-                  className="absolute -bottom-14 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-all duration-300"
-                  initial={{ y: 20, scale: 0.5 }}
+                  className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-20"
+                  initial={{ 
+                    opacity: 0, 
+                    y: 10, 
+                    scale: 0.8 
+                  }}
                   whileHover={{ 
+                    opacity: 1,
                     y: 0, 
-                    scale: 1,
+                    scale: 1.2, // Make text 20% larger
                     transition: { 
-                      duration: 0.4,
-                      ease: "backOut"
+                      duration: 0.3,
+                      ease: "easeOut"
                     }
+                  }}
+                  animate={{
+                    opacity: 0,
+                    y: 10,
+                    scale: 0.8
+                  }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeIn"
                   }}
                 >
                   <motion.div 
-                    className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 rounded-lg shadow-xl"
+                    className="bg-white text-primary-800 px-4 py-2 rounded-lg shadow-lg border-2 border-transparent"
                     whileHover={{
-                      scale: [1, 1.05, 1],
+                      borderColor: "#48944f", // Green border on name hover
+                      backgroundColor: "#f0f9f1", // Light green background
                       transition: {
-                        duration: 0.6,
-                        ease: "easeInOut"
+                        duration: 0.3,
+                        ease: "easeOut"
                       }
+                    }}
+                    initial={{
+                      borderColor: "transparent",
+                      backgroundColor: "#ffffff"
                     }}
                   >
-                    <span className="text-sm font-semibold">{partner.name}</span>
+                    <span className="text-base font-semibold">{partner.name}</span>
                   </motion.div>
                   
-                  {/* Animated Arrow */}
-                  <motion.div 
-                    className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary-600 rotate-45"
-                    whileHover={{
-                      scale: [1, 1.2, 1],
-                      transition: {
-                        duration: 0.4,
-                        ease: "easeInOut"
-                      }
-                    }}
-                  />
+                  {/* Arrow pointing up */}
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-white rotate-45 border-l-2 border-t-2 border-primary-500" />
                 </motion.div>
               </motion.div>
             ))}
