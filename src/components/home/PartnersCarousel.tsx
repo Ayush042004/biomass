@@ -61,47 +61,68 @@ const PartnersCarousel: React.FC = () => {
             {partners.map((partner, index) => (
               <motion.div 
                 key={index} 
-                className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center transition-all duration-500 p-4 bg-white rounded-lg shadow-md hover:shadow-xl relative group overflow-hidden"
+                className="relative group cursor-pointer"
                 variants={itemVariants}
                 whileHover={{ 
-                  scale: 1.1,
-                  y: -5,
+                  y: -8,
                   transition: { duration: 0.3 }
                 }}
               >
-                {/* Company Logo */}
-                <motion.img 
-                  src={partner.logo} 
-                  alt={partner.name} 
-                  className="max-h-full max-w-full object-contain transition-all duration-300 group-hover:scale-110"
-                  initial={{ opacity: 1 }}
-                  whileHover={{ opacity: 0.3 }}
-                  transition={{ duration: 0.3 }}
-                />
-                
-                {/* Company Name Overlay */}
+                {/* Partner Card */}
                 <motion.div
-                  className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-500/90 to-primary-600/90 text-white font-bold text-sm md:text-base text-center px-2 rounded-lg"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileHover={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3 }}
+                  className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.3 }
+                  }}
                 >
-                  <span className="drop-shadow-lg">{partner.name}</span>
+                  {/* Company Logo */}
+                  <motion.img 
+                    src={partner.logo} 
+                    alt={partner.name} 
+                    className="max-h-full max-w-full object-contain transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.1,
+                      transition: { duration: 0.3 }
+                    }}
+                  />
+                  
+                  {/* Subtle Glow Effect on Hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-primary-400/10 to-accent-400/10 rounded-lg opacity-0"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </motion.div>
 
-                {/* Animated Border */}
+                {/* Company Name at Bottom */}
                 <motion.div
-                  className="absolute inset-0 border-2 border-primary-500 rounded-lg opacity-0"
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-
-                {/* Subtle Glow Effect */}
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary-400/20 to-accent-400/20 rounded-lg opacity-0 blur-sm"
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
+                  className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap"
+                  initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                  whileHover={{ 
+                    opacity: 1, 
+                    y: 0, 
+                    scale: 1,
+                    transition: { 
+                      duration: 0.3,
+                      ease: "easeOut"
+                    }
+                  }}
+                >
+                  <div className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-3 py-1 rounded-full shadow-lg">
+                    <span className="text-sm font-semibold">{partner.name}</span>
+                  </div>
+                  
+                  {/* Small Arrow pointing up */}
+                  <motion.div
+                    className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-primary-500 rotate-45"
+                    initial={{ scale: 0 }}
+                    whileHover={{ 
+                      scale: 1,
+                      transition: { delay: 0.1, duration: 0.2 }
+                    }}
+                  />
+                </motion.div>
               </motion.div>
             ))}
           </div>
