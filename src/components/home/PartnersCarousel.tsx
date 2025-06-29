@@ -49,6 +49,40 @@ const PartnersCarousel: React.FC = () => {
           <p className="section-subtitle">
           Trusted by national brands and global MNCs for reliable biomass fuel supply and turnkey boiler systems.
           </p>
+          
+          {/* Hover Hint */}
+          <motion.div
+            className="text-center mb-8"
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
+            <motion.p 
+              className="text-sm text-gray-500 flex items-center justify-center gap-2"
+              animate={{ 
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <motion.span
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                👆
+              </motion.span>
+              Hover over logos to see company names
+            </motion.p>
+          </motion.div>
         </motion.div>
         
         <motion.div 
@@ -93,6 +127,24 @@ const PartnersCarousel: React.FC = () => {
                     whileHover={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   />
+
+                  {/* Hover Indicator - appears on first logo only */}
+                  {index === 0 && (
+                    <motion.div
+                      className="absolute -top-2 -right-2 w-4 h-4 bg-primary-500 rounded-full flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300"
+                      animate={{ 
+                        scale: [1, 1.2, 1],
+                        opacity: [0.7, 1, 0.7]
+                      }}
+                      transition={{ 
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    >
+                      <span className="text-white text-xs">?</span>
+                    </motion.div>
+                  )}
                 </motion.div>
 
                 {/* Company Name at Bottom */}
