@@ -61,7 +61,7 @@ const PartnersCarousel: React.FC = () => {
             {partners.map((partner, index) => (
               <motion.div 
                 key={index} 
-                className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center   transition-all duration-500 p-4 bg-white rounded-lg shadow-md hover:shadow-xl"
+                className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center transition-all duration-500 p-4 bg-white rounded-lg shadow-md hover:shadow-xl relative group overflow-hidden"
                 variants={itemVariants}
                 whileHover={{ 
                   scale: 1.1,
@@ -69,10 +69,38 @@ const PartnersCarousel: React.FC = () => {
                   transition: { duration: 0.3 }
                 }}
               >
-                <img 
+                {/* Company Logo */}
+                <motion.img 
                   src={partner.logo} 
                   alt={partner.name} 
-                  className="max-h-full max-w-full object-contain  brightness-75 hover:brightness-100 transition-all duration-300"
+                  className="max-h-full max-w-full object-contain transition-all duration-300 group-hover:scale-110"
+                  initial={{ opacity: 1 }}
+                  whileHover={{ opacity: 0.3 }}
+                  transition={{ duration: 0.3 }}
+                />
+                
+                {/* Company Name Overlay */}
+                <motion.div
+                  className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-500/90 to-primary-600/90 text-white font-bold text-sm md:text-base text-center px-2 rounded-lg"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileHover={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span className="drop-shadow-lg">{partner.name}</span>
+                </motion.div>
+
+                {/* Animated Border */}
+                <motion.div
+                  className="absolute inset-0 border-2 border-primary-500 rounded-lg opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+
+                {/* Subtle Glow Effect */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-primary-400/20 to-accent-400/20 rounded-lg opacity-0 blur-sm"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
                 />
               </motion.div>
             ))}
