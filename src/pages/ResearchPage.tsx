@@ -50,7 +50,7 @@ const ResearchPage: React.FC = () => {
   return (
     <>
       <motion.section 
-        className="relative bg-cover bg-center py-20 min-h-[70vh] flex items-center"
+        className="relative bg-cover bg-center py-8 sm:py-12 md:py-16 lg:py-20 min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex items-center"
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/2280571/pexels-photo-2280571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
         }}
@@ -66,19 +66,19 @@ const ResearchPage: React.FC = () => {
             animate="visible"
           >
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-white leading-tight px-4"
               variants={itemVariants}
             >
               Research & Development
             </motion.h1>
-            <motion.h5 className='text-1xl md:text-3xl text-gray-100 max-w-3xl mt-5'>
+            <motion.h5 className='text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-100 max-w-3xl mt-2 sm:mt-3 md:mt-4 px-4'>
             Engineering the Future of Circular Bioenergy
             </motion.h5>
             <motion.p 
-              className="text-sm md:text-xl text-gray-100 max-w-3xl mt-5"
+              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-100 max-w-3xl mt-2 sm:mt-3 md:mt-4 px-4"
               variants={itemVariants}
             >
-              At Nature Bio Works, innovation isn’t a department — it’s the foundation of our mission. Our in-house R&D capabilities are focused on developing next-generation biomass and waste-to-energy technologies that are scalable, efficient, and climate-resilient.
+              At Nature Bio Works, innovation isn't a department — it's the foundation of our mission. Our in-house R&D capabilities are focused on developing next-generation biomass and waste-to-energy technologies that are scalable, efficient, and climate-resilient.
             </motion.p>
           </motion.div>
         </div>
@@ -93,21 +93,21 @@ const ResearchPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-primary-800">Innovation at Our Core</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-4 sm:mb-6 lg:mb-8 text-primary-800">Innovation at Our Core</h2>
               <motion.p 
-                className="text-lg mb-8 text-gray-700 leading-relaxed"
+                className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 lg:mb-8 text-gray-700 leading-relaxed"
                 variants={itemVariants}
               >
              Our R&D team blends environmental science with precision engineering to deliver disruptive solutions in biomass utilization and waste valorization.
               </motion.p>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {[
                   {
                     number: "1",
@@ -140,13 +140,13 @@ const ResearchPage: React.FC = () => {
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-xs sm:text-sm">
                         {item.number}
                       </div>
                     </motion.div>
-                    <div className="ml-6">
-                      <h3 className="text-xl font-display font-semibold mb-2 text-primary-800">{item.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                    <div className="ml-3 sm:ml-6">
+                      <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-display font-semibold mb-1 sm:mb-2 text-primary-800">{item.title}</h3>
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -164,14 +164,14 @@ const ResearchPage: React.FC = () => {
                 />
               </div>
               <motion.div 
-                className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl"
+                className="absolute -bottom-3 sm:-bottom-4 md:-bottom-6 -left-3 sm:-left-4 md:-left-6 bg-white p-3 sm:p-4 md:p-6 rounded-xl shadow-xl"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <div className="text-3xl font-bold text-primary-600">50+</div>
-                <div className="text-sm text-gray-600">Research Projects</div>
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-primary-600">50+</div>
+                <div className="text-xs sm:text-sm text-gray-600">Research Projects</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -187,20 +187,20 @@ const ResearchPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-primary-800"
               variants={itemVariants}
             >
               Ongoing Research Initiatives
             </motion.h2>
             <motion.p 
-              className="text-xl text-primary-700 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-primary-700 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               Exploring cutting-edge solutions for tomorrow's energy challenges.
@@ -208,7 +208,7 @@ const ResearchPage: React.FC = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -236,18 +236,18 @@ const ResearchPage: React.FC = () => {
               {
                 icon: "📈",
                 title: " Policy-Linked Tech Integration",
-                description: "Aligning R&D with India’s SATAT, Swachh Bharat, and Net Zero targets — ensuring our technologies qualify for MNRE and RBI-linked incentives.",
+                description: "Aligning R&D with India's SATAT, Swachh Bharat, and Net Zero targets — ensuring our technologies qualify for MNRE and RBI-linked incentives.",
                 progress: 90
               }
             ].map((project, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
                 variants={cardVariants}
                 whileHover="hover"
               >
                 <motion.div 
-                  className="text-4xl mb-6"
+                  className="text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 lg:mb-6"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -255,16 +255,16 @@ const ResearchPage: React.FC = () => {
                 >
                   {project.icon}
                 </motion.div>
-                <h3 className="text-2xl font-display font-bold mb-4 text-primary-800">{project.title}</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
-                <div className="mb-4">
-                  <div className="flex justify-between text-sm text-gray-600 mb-2">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-display font-bold mb-2 sm:mb-3 lg:mb-4 text-primary-800">{project.title}</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 lg:mb-6 leading-relaxed">{project.description}</p>
+                <div className="mb-3 sm:mb-4">
+                  <div className="flex justify-between text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">
                     <span>Progress</span>
                     <span>{project.progress}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div className="w-full bg-gray-200 rounded-full h-1 sm:h-2">
                     <motion.div 
-                      className="bg-gradient-to-r from-primary-500 to-primary-600 h-2 rounded-full"
+                      className="bg-gradient-to-r from-primary-500 to-primary-600 h-1 sm:h-2 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${project.progress}%` }}
                       viewport={{ once: true }}
@@ -272,7 +272,7 @@ const ResearchPage: React.FC = () => {
                     />
                   </div>
                 </div>
-                <Link to="/contact" className="text-primary-500 font-medium hover:text-primary-600 transition-colors">
+                <Link to="/contact" className="text-primary-500 font-medium hover:text-primary-600 transition-colors text-xs sm:text-sm md:text-base">
                   Learn more →
                 </Link>
               </motion.div>
@@ -300,19 +300,19 @@ const ResearchPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 px-4"
               variants={itemVariants}
             >
               Partner with Us
             </motion.h2>
             <motion.p 
-              className="text-xl mb-8 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 lg:mb-8 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               Join us in developing the next generation of sustainable biomass solutions.
             </motion.p>
             <motion.div variants={itemVariants}>
-              <Link to="/contact" className="btn-accent text-lg px-8 py-4">
+              <Link to="/contact" className="btn-accent text-sm sm:text-base md:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4">
                 Get in Touch
               </Link>
             </motion.div>

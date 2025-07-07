@@ -52,13 +52,13 @@ const PartnersCarousel: React.FC = () => {
           
           {/* Hover Hint */}
           <motion.div
-            className="text-center mb-8"
+            className="text-center mb-4 sm:mb-6 lg:mb-8"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 1, duration: 0.8 }}
           >
             <motion.p 
-              className="text-sm text-gray-500 flex items-center justify-center gap-2"
+              className="text-xs sm:text-sm text-gray-500 flex items-center justify-center gap-2"
               animate={{ 
                 opacity: [0.5, 1, 0.5],
               }}
@@ -86,12 +86,12 @@ const PartnersCarousel: React.FC = () => {
         </motion.div>
         
         <motion.div 
-          className="mt-12"
+          className="mt-6 sm:mt-8 lg:mt-12"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-16">
             {partners.map((partner, index) => (
               <motion.div 
                 key={index} 
@@ -99,7 +99,7 @@ const PartnersCarousel: React.FC = () => {
                 variants={itemVariants}
               >
                 {/* Partner Card */}
-                <div className="w-32 h-20 md:w-40 md:h-24 flex items-center justify-center p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary-500 group-hover:scale-110 group-hover:-translate-y-2">
+                <div className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-18 lg:w-32 lg:h-20 xl:w-40 xl:h-24 flex items-center justify-center p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary-500 group-hover:scale-110 group-hover:-translate-y-2">
                   {/* Company Logo */}
                   <img 
                     src={partner.logo} 
@@ -109,9 +109,9 @@ const PartnersCarousel: React.FC = () => {
                 </div>
 
                 {/* Company Name Tooltip - Shows on hover */}
-                <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <div className="bg-white text-primary-800 px-4 py-2 rounded-lg shadow-lg border-2 border-transparent group-hover:border-primary-500 group-hover:bg-primary-50 transition-all duration-300">
-                    <span className="text-base   inline-block transition-transform duration-300">
+                <div className="absolute -bottom-10 sm:-bottom-12 lg:-bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <div className="bg-white text-primary-800 px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-lg shadow-lg border-2 border-transparent group-hover:border-primary-500 group-hover:bg-primary-50 transition-all duration-300">
+                    <span className="text-xs sm:text-sm md:text-base inline-block transition-transform duration-300">
                       {partner.name}
                     </span>
                   </div>

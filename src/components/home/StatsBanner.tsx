@@ -65,22 +65,22 @@ const StatsBanner: React.FC<StatsBannerProps> = ({ stats }) => {
   };
 
   return (
-    <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-20" ref={ref}>
+    <section className="bg-gradient-to-br from-primary-50 to-primary-100 py-8 sm:py-12 md:py-16 lg:py-20" ref={ref}>
       <div className="container-custom">
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary-800">Our Impact</h2>
-          <p className="text-xl text-primary-600 max-w-3xl mx-auto">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-primary-800">Our Impact</h2>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-primary-600 max-w-3xl mx-auto px-4">
             Making a difference with sustainable biomass solutions.
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
@@ -92,14 +92,14 @@ const StatsBanner: React.FC<StatsBannerProps> = ({ stats }) => {
             return (
               <motion.div 
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform relative overflow-hidden"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform relative overflow-hidden"
                 variants={itemVariants}
                 whileHover="hover"
                 custom={cardHoverVariants}
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-bl-full opacity-50"></div>
+                <div className="absolute top-0 right-0 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-bl-full opacity-50"></div>
                 <div className="relative z-10">
-                  <div className="text-4xl md:text-5xl font-bold mb-2 text-primary-600">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 text-primary-600">
                     {inView && (
                       <CountUp
                         end={numericValue}
@@ -110,8 +110,8 @@ const StatsBanner: React.FC<StatsBannerProps> = ({ stats }) => {
                       />
                     )}
                   </div>
-                  <div className="text-xl font-semibold mb-2 text-gray-800">{stat.label}</div>
-                  <p className="text-gray-600">{stat.description}</p>
+                  <div className="text-base sm:text-lg lg:text-xl font-semibold mb-2 text-gray-800">{stat.label}</div>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600">{stat.description}</p>
                 </div>
               </motion.div>
             );

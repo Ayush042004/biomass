@@ -60,7 +60,7 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <section 
-      className="relative bg-cover bg-center h-[80vh] min-h-[600px] flex items-center"
+      className="relative bg-cover bg-center h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[400px] sm:min-h-[500px] md:min-h-[600px] flex items-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -72,28 +72,28 @@ const Hero: React.FC<HeroProps> = ({
           animate="visible"
         >
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 text-white leading-tight px-4"
             variants={itemVariants}
           >
             {title}
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl mb-8 text-gray-100 max-w-2xl"
+            className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-gray-100 max-w-2xl px-4"
             variants={itemVariants}
           >
             {subtitle}
           </motion.p>
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4"
             variants={itemVariants}
           >
             <motion.div variants={buttonVariants} whileHover="hover">
-              <Link to={ctaLink} className="btn-accent text-center inline-block">
+              <Link to={ctaLink} className="btn-accent text-center inline-block text-sm sm:text-base">
                 {ctaText}
               </Link>
             </motion.div>
             <motion.div variants={buttonVariants} whileHover="hover">
-              <Link to="/research" className="btn-outline border-white text-white hover:bg-white/10 text-center inline-block">
+              <Link to="/research" className="btn-outline border-white text-white hover:bg-white/10 text-center inline-block text-sm sm:text-base">
                 Research & Development
               </Link>
             </motion.div>

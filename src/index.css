@@ -23,31 +23,31 @@
   }
 
   h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tighter;
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-semibold tracking-tight;
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight;
   }
 
   h4 {
-    @apply text-xl md:text-2xl font-semibold tracking-tight;
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl font-semibold tracking-tight;
   }
 
   h5 {
-    @apply text-lg md:text-xl font-semibold tracking-tight;
+    @apply text-sm sm:text-base md:text-lg lg:text-xl font-semibold tracking-tight;
   }
 
   h6 {
-    @apply text-base md:text-lg font-semibold tracking-tight;
+    @apply text-xs sm:text-sm md:text-base lg:text-lg font-semibold tracking-tight;
   }
 
   p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base;
   }
 
   .text-balance {
@@ -65,7 +65,7 @@
   }
   
   .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:scale-105 active:scale-100 shadow-lg hover:shadow-xl tracking-wide;
+    @apply inline-flex items-center justify-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 text-sm sm:text-base font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:scale-105 active:scale-100 shadow-lg hover:shadow-xl tracking-wide;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
   
@@ -90,21 +90,21 @@
   }
 
   .section {
-    @apply py-16 md:py-24;
+    @apply py-8 sm:py-12 md:py-16 lg:py-24;
   }
 
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 text-center tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8 text-center tracking-tight px-4;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   .section-subtitle {
-    @apply text-xl text-gray-600 mb-12 text-center max-w-3xl mx-auto leading-relaxed;
+    @apply text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 md:mb-12 text-center max-w-3xl mx-auto leading-relaxed px-4;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   .nav-link {
-    @apply relative text-gray-700 transition-all duration-300 font-medium tracking-wide;
+    @apply relative text-gray-700 transition-all duration-300 font-medium tracking-wide text-sm sm:text-base;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -129,22 +129,22 @@
   }
 
   .form-input {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 font-medium;
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 font-medium;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   .form-label {
-    @apply block text-sm font-semibold text-gray-700 mb-1 tracking-wide;
+    @apply block text-xs sm:text-sm font-semibold text-gray-700 mb-1 tracking-wide;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   .form-select {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white transition-all duration-200 font-medium;
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white transition-all duration-200 font-medium;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   .form-textarea {
-    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-y font-medium;
+    @apply w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-y font-medium;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -159,7 +159,7 @@
   }
 
   .text-caption {
-    @apply text-sm font-medium text-gray-600 tracking-wide;
+    @apply text-xs sm:text-sm font-medium text-gray-600 tracking-wide;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
@@ -199,11 +199,11 @@
 
 /* Enhanced shadows */
 .shadow-soft {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-soft-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .shadow-soft-xl {
@@ -216,11 +216,10 @@
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent font-bold;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
 }
 
-/* Line clamp utility */
+/* Line clamp utilities */
 .line-clamp-3 {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -228,47 +227,83 @@
   overflow: hidden;
 }
 
-/* Typography utilities */
+/* Font feature utilities */
 .font-feature-default {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
 .font-feature-tabular {
-  font-feature-settings: "tnum", "cv02", "cv03", "cv04", "cv11";
+  font-feature-settings: "tnum";
 }
 
 .font-feature-mono {
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-feature-settings: "mono";
 }
 
-/* Enhanced button styles */
+/* Additional button styles */
 .btn-ghost {
-  @apply btn bg-transparent text-gray-700 hover:bg-gray-100 hover:text-gray-900 border border-gray-200 hover:border-gray-300 font-medium;
+  @apply btn bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900 shadow-none hover:shadow-md;
 }
 
 .btn-link {
-  @apply font-medium text-primary-600 hover:text-primary-700 underline-offset-4 hover:underline tracking-wide;
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  @apply btn bg-transparent text-primary-600 hover:text-primary-700 underline shadow-none hover:shadow-none;
 }
 
-/* Card variants */
+/* Card variations */
 .card-hover {
-  @apply card hover:scale-105 cursor-pointer;
+  @apply card hover:shadow-2xl hover:-translate-y-2 transition-all duration-300;
 }
 
 .card-bordered {
-  @apply card border border-gray-200;
+  @apply card border-2 border-gray-200 hover:border-primary-300;
 }
 
-/* Text variants */
+/* Text utilities */
 .text-muted {
-  @apply text-gray-600;
-}
-
-.text-subtle {
   @apply text-gray-500;
 }
 
+.text-subtle {
+  @apply text-gray-400;
+}
+
 .text-emphasis {
-  @apply text-gray-900 font-semibold;
+  @apply text-primary-600 font-semibold;
+}
+
+/* Mobile-specific utilities */
+.mobile-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
+
+.mobile-margin {
+  @apply mx-4 sm:mx-6 lg:mx-8;
+}
+
+.mobile-text {
+  @apply text-sm sm:text-base md:text-lg;
+}
+
+.mobile-heading {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+}
+
+.mobile-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+.mobile-flex {
+  @apply flex flex-col sm:flex-row gap-4 sm:gap-6;
+}
+
+.mobile-nav {
+  @apply flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6;
+}
+
+.mobile-section {
+  @apply py-8 sm:py-12 md:py-16 lg:py-24;
+}
+
+.mobile-container {
+  @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
 }

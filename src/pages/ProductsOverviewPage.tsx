@@ -51,7 +51,7 @@ const ProductsOverviewPage: React.FC = () => {
   return (
     <>
       <motion.section 
-        className="relative bg-cover bg-center py-32 min-h-[70vh] flex items-center"
+        className="relative bg-cover bg-center py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex items-center"
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
         }}
@@ -67,13 +67,13 @@ const ProductsOverviewPage: React.FC = () => {
             animate="visible"
           >
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-white leading-tight px-4"
               variants={itemVariants}
             >
               Products & Services
             </motion.h1>
             <motion.p 
-              className="text-sm md:text-xl text-gray-100 max-w-3xl"
+              className="text-xs sm:text-sm md:text-base lg:text-xl text-gray-100 max-w-3xl px-4"
               variants={itemVariants}
             >
               Explore our comprehensive range of biomass solutions for sustainable energy generation.
@@ -91,20 +91,20 @@ const ProductsOverviewPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-primary-800"
               variants={itemVariants}
             >
               Our Solutions
             </motion.h2>
             <motion.p 
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               Discover innovative biomass technologies designed for maximum efficiency and sustainability.
@@ -112,7 +112,7 @@ const ProductsOverviewPage: React.FC = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -129,7 +129,7 @@ const ProductsOverviewPage: React.FC = () => {
                   className="group block"
                 >
                   <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden h-full">
-                    <div className="relative h-64 overflow-hidden">
+                    <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
                       <img 
                         src={product.image}
                         alt={product.title}
@@ -142,17 +142,17 @@ const ProductsOverviewPage: React.FC = () => {
                         whileHover={{ scale: 1 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <span className="text-white font-semibold text-lg bg-primary-500 px-6 py-2 rounded-full">
+                        <span className="text-white font-semibold text-sm sm:text-base md:text-lg bg-primary-500 px-3 sm:px-4 md:px-6 py-1 sm:py-2 rounded-full">
                           Learn More
                         </span>
                       </motion.div>
                     </div>
-                    <div className="p-8">
-                      <h2 className="text-2xl font-display font-bold mb-3 text-primary-800 group-hover:text-primary-600 transition-colors">
+                    <div className="p-4 sm:p-6 lg:p-8">
+                      <h2 className="text-lg sm:text-xl md:text-2xl font-display font-bold mb-2 sm:mb-3 text-primary-800 group-hover:text-primary-600 transition-colors">
                         {product.title}
                       </h2>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{product.description}</p>
-                      <span className="text-primary-500 font-medium group-hover:text-primary-600 transition-colors inline-flex items-center">
+                      <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3 sm:mb-4 leading-relaxed">{product.description}</p>
+                      <span className="text-primary-500 font-medium group-hover:text-primary-600 transition-colors inline-flex items-center text-xs sm:text-sm md:text-base">
                         View Details 
                         <motion.span
                           className="ml-2"
@@ -191,19 +191,19 @@ const ProductsOverviewPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 px-4"
               variants={itemVariants}
             >
               Need a Custom Solution?
             </motion.h2>
             <motion.p 
-              className="text-xl mb-8 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 lg:mb-8 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               Our team of experts can design a tailored biomass system to meet your specific requirements.
             </motion.p>
             <motion.div variants={itemVariants}>
-              <Link to="/contact" className="btn-accent text-lg px-8 py-4">
+              <Link to="/contact" className="btn-accent text-sm sm:text-base md:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4">
                 Request a Consultation
               </Link>
             </motion.div>

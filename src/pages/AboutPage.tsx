@@ -62,7 +62,7 @@ const AboutPage: React.FC = () => {
   return (
     <>
       <motion.section 
-        className="relative bg-cover bg-center py-20 min-h-[70vh] flex items-center"
+        className="relative bg-cover bg-center py-8 sm:py-12 md:py-16 lg:py-20 min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex items-center"
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/4491881/pexels-photo-4491881.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
         }}
@@ -78,13 +78,13 @@ const AboutPage: React.FC = () => {
             animate="visible"
           >
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-white leading-tight px-4"
               variants={itemVariants}
             >
               About Us
             </motion.h1>
             <motion.p 
-              className="text-sm md:text-xl text-gray-100 max-w-3xl mt-20"
+              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-100 max-w-3xl mt-8 sm:mt-12 md:mt-16 lg:mt-20 px-4"
               variants={itemVariants}
             >
                Established in 2021, Nature Bio Works has been a pioneer in delivering advanced sustainable energy solutions. We specialize in enabling industrial and institutional clients to transition seamlessly from fossil 
@@ -103,34 +103,34 @@ const AboutPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-4xl md:text-5xl font-display font-bold mb-8 text-primary-800">Our Mission</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-4 sm:mb-6 lg:mb-8 text-primary-800">Our Mission</h2>
               <motion.p 
-                className="text-lg mb-6 text-gray-700 leading-relaxed"
+                className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 text-gray-700 leading-relaxed"
                 variants={itemVariants}
               >
                 At Nature Bio Works, our mission is to lead the transition toward a cleaner, more sustainable energy future by delivering high-performance biomass solutions that address both environmental and industrial challenges.
               </motion.p>
               <motion.p 
-                className="text-lg mb-6 text-gray-700 leading-relaxed"
+                className="text-sm sm:text-base md:text-lg mb-3 sm:mb-4 md:mb-6 text-gray-700 leading-relaxed"
                 variants={itemVariants}
               >
                 We are committed to replacing fossil fuels with renewable, carbon-neutral biomass fuels—enabling industries to significantly reduce emissions while maintaining operational efficiency and cost-effectiveness.
               </motion.p>
               <motion.p 
-                className="text-lg mb-8 text-gray-700 leading-relaxed"
+                className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 lg:mb-8 text-gray-700 leading-relaxed"
                 variants={itemVariants} 
               >
                 We view sustainable energy not only as an environmental necessity but as a strategic lever for business growth. Through innovation, engineering excellence, and deep sectoral expertise, we empower our clients to meet their ESG goals, reduce their carbon footprint, and unlock new value from waste.
               </motion.p>
               <motion.div variants={itemVariants}>
-                <Link to="/contact" className="btn-primary">
+                <Link to="/contact" className="btn-primary text-sm sm:text-base">
                   Get in Touch
                 </Link>
               </motion.div>
@@ -147,14 +147,14 @@ const AboutPage: React.FC = () => {
                 />
               </div>
               <motion.div 
-                className="absolute -bottom-6 -right-6 bg-primary-500 text-white p-6 rounded-xl shadow-xl"
+                className="absolute -bottom-3 sm:-bottom-4 md:-bottom-6 -right-3 sm:-right-4 md:-right-6 bg-primary-500 text-white p-3 sm:p-4 md:p-6 rounded-xl shadow-xl"
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, duration: 0.6 }}
               >
-                <div className="text-3xl font-bold">15+</div>
-                <div className="text-sm">Years Experience</div>
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">15+</div>
+                <div className="text-xs sm:text-sm">Years Experience</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -170,20 +170,20 @@ const AboutPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 lg:mb-16"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-primary-800"
               variants={itemVariants}
             >
               Our Core Values
             </motion.h2>
             <motion.p 
-              className="text-xl text-primary-700 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-primary-700 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               At Nature Bio Works, our work is anchored in principles that reflect our long-term commitment to environmental stewardship, technical excellence, and shared progress.
@@ -192,7 +192,7 @@ const AboutPage: React.FC = () => {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -217,12 +217,12 @@ const AboutPage: React.FC = () => {
             ].map((value, index) => (
               <motion.div 
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
                 variants={cardVariants}
                 whileHover="hover"
               >
                 <motion.div 
-                  className="text-4xl mb-6"
+                  className="text-2xl sm:text-3xl md:text-4xl mb-3 sm:mb-4 lg:mb-6"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
@@ -230,8 +230,8 @@ const AboutPage: React.FC = () => {
                 >
                   {value.icon}
                 </motion.div>
-                <h3 className="text-2xl font-display font-bold mb-4 text-primary-800">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-display font-bold mb-2 sm:mb-3 lg:mb-4 text-primary-800">{value.title}</h3>
+                <p className="text-xs sm:text-sm lg:text-base text-gray-600 leading-relaxed">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -259,19 +259,19 @@ const AboutPage: React.FC = () => {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 px-4"
               variants={itemVariants}
             >
               Ready to Join the Clean Energy Revolution?
             </motion.h2>
             <motion.p 
-              className="text-xl mb-8 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 lg:mb-8 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               Contact us today to learn how our biomass solutions can help your business reduce emissions and costs.
             </motion.p>
             <motion.div variants={itemVariants}>
-              <Link to="/contact" className="btn-accent text-lg px-8 py-4">
+              <Link to="/contact" className="btn-accent text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4">
                 Get Your Electrification Roadmap
               </Link>
             </motion.div>

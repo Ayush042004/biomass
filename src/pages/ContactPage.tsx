@@ -69,7 +69,7 @@ const ContactPage: React.FC = () => {
   return (
     <>
       <motion.section 
-        className="relative bg-cover bg-center py-32 min-h-[70vh] flex items-center"
+        className="relative bg-cover bg-center py-12 sm:py-16 md:py-20 lg:py-24 min-h-[40vh] sm:min-h-[50vh] md:min-h-[60vh] lg:min-h-[70vh] flex items-center"
         style={{ 
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)`
         }}
@@ -85,13 +85,13 @@ const ContactPage: React.FC = () => {
             animate="visible"
           >
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6 text-white leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-white leading-tight px-4"
               variants={itemVariants}
             >
               Contact Us
             </motion.h1>
             <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-100 max-w-3xl px-4"
               variants={itemVariants}
             >
               Get in touch with our team to discuss how we can help with your biomass energy needs.
@@ -109,7 +109,7 @@ const ContactPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-3 gap-12"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -121,13 +121,13 @@ const ContactPage: React.FC = () => {
               variants={itemVariants}
             >
               <motion.div 
-                className="bg-white shadow-xl rounded-2xl p-8"
+                className="bg-white shadow-xl rounded-2xl p-4 sm:p-6 lg:p-8"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-2xl font-display font-bold mb-8 text-primary-800">Contact Information</h2>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-display font-bold mb-4 sm:mb-6 lg:mb-8 text-primary-800">Contact Information</h2>
                 
-                <div className="space-y-8">
+                <div className="space-y-4 sm:space-y-6 lg:space-y-8">
                   {[
                     {
                       icon: MapPin,
@@ -146,7 +146,7 @@ const ContactPage: React.FC = () => {
                       content: (
                         <>
                           012-0444-4600, +91 98736 94143 , 9625979877<br />
-                          <span className="text-gray-500 text-sm">Monday-Friday, 9am-5pm IST</span>
+                          <span className="text-gray-500 text-xs sm:text-sm">Monday-Friday, 9am-5pm IST</span>
                         </>
                       )
                     },
@@ -156,7 +156,7 @@ const ContactPage: React.FC = () => {
                       content: (
                         <>
                           Info@naturebioworks.in<br />
-                          <span className="text-gray-500 text-sm">We respond within 24 hours</span>
+                          <span className="text-gray-500 text-xs sm:text-sm">We respond within 24 hours</span>
                         </>
                       )
                     }
@@ -170,11 +170,11 @@ const ContactPage: React.FC = () => {
                       transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
                     >
                       <div className="flex-shrink-0 mt-1">
-                        <item.icon className="h-6 w-6 text-primary-500" />
+                        <item.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6 text-primary-500" />
                       </div>
-                      <div className="ml-4">
-                        <h3 className="text-lg font-semibold text-primary-800">{item.title}</h3>
-                        <p className="text-gray-600">{item.content}</p>
+                      <div className="ml-2 sm:ml-3 lg:ml-4">
+                        <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-primary-800">{item.title}</h3>
+                        <p className="text-xs sm:text-sm lg:text-base text-gray-600">{item.content}</p>
                       </div>
                     </motion.div>
                   ))}
@@ -188,21 +188,21 @@ const ContactPage: React.FC = () => {
               variants={itemVariants}
             >
               <motion.div 
-                className="bg-white shadow-xl rounded-2xl p-8"
+                className="bg-white shadow-xl rounded-2xl p-4 sm:p-6 lg:p-8"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <h2 className="text-2xl font-display font-bold mb-8 text-primary-800">Get in Touch</h2>
+                <h2 className="text-lg sm:text-xl md:text-2xl font-display font-bold mb-4 sm:mb-6 lg:mb-8 text-primary-800">Get in Touch</h2>
                 
                 {isSuccess ? (
                   <motion.div 
-                    className="bg-green-100 text-green-700 p-6 rounded-xl mb-6"
+                    className="bg-green-100 text-green-700 p-3 sm:p-4 md:p-6 rounded-xl mb-4 sm:mb-6"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <h3 className="font-bold">Message Sent!</h3>
-                    <p>Thank you for reaching out. One of our representatives will contact you shortly.</p>
+                    <h3 className="font-bold text-xs sm:text-sm md:text-base">Message Sent!</h3>
+                    <p className="text-xs sm:text-sm md:text-base">Thank you for reaching out. One of our representatives will contact you shortly.</p>
                   </motion.div>
                 ) : (
                   <motion.form 
@@ -212,11 +212,11 @@ const ContactPage: React.FC = () => {
                     animate="visible"
                   >
                     <motion.div 
-                      className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6"
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-6"
                       variants={itemVariants}
                     >
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                           Full Name <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -225,13 +225,13 @@ const ContactPage: React.FC = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
                           required
                         />
                       </div>
                       
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                           Email Address <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -240,18 +240,18 @@ const ContactPage: React.FC = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
                           required
                         />
                       </div>
                     </motion.div>
                     
                     <motion.div 
-                      className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6"
+                      className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 mb-3 sm:mb-4 md:mb-6"
                       variants={itemVariants}
                     >
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                           Phone Number
                         </label>
                         <input
@@ -260,12 +260,12 @@ const ContactPage: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
                         />
                       </div>
                       
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
+                        <label htmlFor="company" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                           Company
                         </label>
                         <input
@@ -274,16 +274,16 @@ const ContactPage: React.FC = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+                          className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
                         />
                       </div>
                     </motion.div>
                     
                     <motion.div 
-                      className="mb-6"
+                      className="mb-3 sm:mb-4 md:mb-6"
                       variants={itemVariants}
                     >
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                         Subject
                       </label>
                       <select
@@ -291,7 +291,7 @@ const ContactPage: React.FC = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
                       >
                         <option value="">Select a subject</option>
                         <option value="quote">Request a Quote</option>
@@ -303,10 +303,10 @@ const ContactPage: React.FC = () => {
                     </motion.div>
                     
                     <motion.div 
-                      className="mb-6"
+                      className="mb-3 sm:mb-4 md:mb-6"
                       variants={itemVariants}
                     >
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 mb-1 sm:mb-2">
                         Message <span className="text-red-500">*</span>
                       </label>
                       <textarea
@@ -315,14 +315,14 @@ const ContactPage: React.FC = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows={6}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200"
                         required
                       ></textarea>
                     </motion.div>
                     
                     {error && (
                       <motion.div 
-                        className="mb-6 text-red-500"
+                        className="mb-3 sm:mb-4 md:mb-6 text-red-500 text-xs sm:text-sm"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                       >
@@ -332,7 +332,7 @@ const ContactPage: React.FC = () => {
                     
                     <motion.button
                       type="submit"
-                      className="btn-primary w-full sm:w-auto text-lg px-8 py-4"
+                      className="btn-primary w-full sm:w-auto text-xs sm:text-sm md:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-2 sm:py-3 md:py-4"
                       disabled={isSubmitting}
                       variants={itemVariants}
                       whileHover={{ scale: 1.05 }}
@@ -357,20 +357,20 @@ const ContactPage: React.FC = () => {
       >
         <div className="container-custom">
           <motion.div 
-            className="mb-12 text-center"
+            className="mb-6 sm:mb-8 md:mb-10 lg:mb-12 text-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-4xl md:text-5xl font-display font-bold mb-6 text-primary-800"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold mb-3 sm:mb-4 md:mb-6 text-primary-800"
               variants={itemVariants}
             >
               Our Location
             </motion.h2>
             <motion.p 
-              className="text-xl text-primary-700 max-w-3xl mx-auto"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-primary-700 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
               Visit our headquarters to discuss your biomass needs in person.
@@ -378,7 +378,7 @@ const ContactPage: React.FC = () => {
           </motion.div>
           
           <motion.div 
-            className="rounded-2xl overflow-hidden shadow-2xl h-[600px]"
+            className="rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
