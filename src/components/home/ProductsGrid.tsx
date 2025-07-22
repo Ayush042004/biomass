@@ -51,7 +51,7 @@ const ProductsGrid: React.FC = () => {
   };
 
   return (
-    <section className="section bg-gradient-to-b from-white to-gray-50" ref={ref}>
+    <section className="section bg-gray-100" ref={ref}>
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

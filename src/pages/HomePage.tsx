@@ -154,39 +154,28 @@ const HomePage: React.FC = () => {
       </section>
       
       <StatsBanner stats={stats} />
+      <PartnersCarousel />
 
-      <section className="section">
-        <div className="container-custom">
+      <section className="section ">
+        <div className="container-custom ">
           <motion.div 
-            className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center"
+            className="max-w-4xl mx-auto text-center"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.div variants={itemVariants}>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 sm:mb-6">About Nature Bio Works</h2>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
+              <h2 className="text-2xl justify-center sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-10 text-center">About Nature Bio Works</h2>
+              <p className="text-base sm:text-lg md:text-xl max-w-4xl mx-auto text-center lg:text-1xl leading-relaxed text-gray-600 mb-6 sm:mb-8 md:mb-10">
               Established in 2021, Nature Bio Works has been a pioneer in delivering advanced sustainable energy solutions. We specialize in enabling industrial and institutional clients to transition seamlessly from fossil fuels to high-efficiency biomass technologies. 
               Our operations are driven by a deep commitment to environmental stewardship, supported by state-of-the-art engineering and innovative waste-to-energy systems.
               </p>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/about" className="btn-primary text-sm sm:text-base">
+                <Link to="/about" className="btn-primary sm:text-lg md:text-xl px-5">
                   Learn More About Us
                 </Link>
               </motion.div>
-            </motion.div>
-            <motion.div 
-              className="rounded-lg overflow-hidden shadow-2xl"
-              variants={itemVariants}
-              whileHover={{ scale: 1.02, y: -5 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src="https://images.pexels.com/photos/4491881/pexels-photo-4491881.jpeg"
-                alt="About Nature Biomass"
-                className="w-full h-full object-cover"
-              />
             </motion.div>
           </motion.div>
         </div>
@@ -262,7 +251,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
       
-      <PartnersCarousel />
+
       
       <section className="section bg-gradient-to-br from-primary-50 to-primary-100">
         <div className="container-custom">
