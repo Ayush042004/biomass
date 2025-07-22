@@ -154,7 +154,6 @@ const HomePage: React.FC = () => {
       </section>
       
       <StatsBanner stats={stats} />
-      <PartnersCarousel />
 
       <section className="section ">
         <div className="container-custom ">
@@ -180,6 +179,8 @@ const HomePage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      <PartnersCarousel/>
       
       <ProductsGrid />
       

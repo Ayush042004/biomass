@@ -38,7 +38,7 @@ const PartnersCarousel: React.FC = () => {
   };
 
   return (
-    <section className="section bg-gradient-to-br from-gray-50 to-gray-100" ref={ref}>
+    <section className="section bg-gradient-to-br from-slate-50 to-slate-200" ref={ref}>
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
