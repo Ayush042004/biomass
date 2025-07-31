@@ -62,7 +62,7 @@ const Header: React.FC = () => {
   const fuelLinks = [
     { name: 'Biomass Briquettes', path: '/fuels/briquettes' },
     { name: 'Biomass Pellets', path: '/fuels/pellets' },
-    { name: 'Biomass Wood Chips', path: '/fuels/wood-chips' },
+    { name: 'Biomass  Chips', path: '/fuels/wood-chips' },
     { name: 'Cashew Nuts Shell (CNS)', path: '/fuels/cashew-nut-shell' },
   ];
 

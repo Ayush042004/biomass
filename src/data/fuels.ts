@@ -1,3 +1,8 @@
+import biomassChips from '../assets/Chips.png';
+import biomassPellets from '../assets/Wood Pellets.png';
+import biomassBriquettes from '../assets/Biomass Briquettes.png';
+import cnsBiomass from '../assets/CNS Biomass.png';
+
 export interface Fuel {
   id: string;
   name: string;
@@ -19,7 +24,7 @@ export const fuels: Fuel[] = [
     name: 'Biomass Briquettes',
     type: 'Briquettes',
     description: 'Nature Bio Works manufactures high-efficiency biomass briquettes — densified energy blocks produced from agricultural residues such as parali (stubble), groundnut husk, cow dung, and organic municipal waste. Engineered to replace conventional coal in industrial boilers and kilns, our briquettes are a reliable and environmentally responsible alternative for heat and energy generation.',
-    image: 'https://images.pexels.com/photos/6976103/pexels-photo-6976103.jpeg',
+    image: biomassBriquettes,
     calorificValue: '4800',
     advantages: [
       ' Effectively replaces coal, lignite, and furnace oil in boilers and thermal processes.',
@@ -83,7 +88,7 @@ export const fuels: Fuel[] = [
     name: 'Wood Pellets',
     type: 'Pellets',
     description: 'Nature Bio Works produces high-quality wood pellets made from sawdust, wood chips, agro-forestry residues, and processed biomass. These pellets are a clean-burning, renewable fuel source designed to deliver uniform heat with minimal ash — ideal for heating systems, industrial boilers, and commercial power applications.',
-    image: 'https://images.pexels.com/photos/6594085/pexels-photo-6594085.jpeg',
+    image: biomassPellets,
     calorificValue: '4500',
     advantages: [
       'High energy density',
@@ -143,10 +148,9 @@ export const fuels: Fuel[] = [
   },
   {
     id: 'wood-chips',
-    name: 'Wood Chips',
+    name: 'Biomass Chips',
     type: 'Wood Chips',
-    description: 'Nature Bio Works supplies processed wood chips sourced from agro-forestry residues, sawmill by-products, and sustainable timber waste. These chips are ideal for large-scale biomass combustion systems, providing a cost-effective, renewable fuel alternative for high-capacity industrial applications.',
-    image: 'https://images.pexels.com/photos/6594263/pexels-photo-6594263.jpeg',
+    image: biomassChips,
     calorificValue: '3500',
     advantages: [
       'Cost-effective',
@@ -155,6 +159,7 @@ export const fuels: Fuel[] = [
       'Suitable for large systems',
       'Flexible sourcing options'
     ],
+    description: 'Nature Bio Works offers premium biomass chips crafted from coconut husk, cashew shell waste, and other agri-based residues. Designed for modern biomass combustion systems, these chips deliver consistent energy output and exceptional fuel efficiency. Produced through a clean, sustainable process, they serve as a renewable and cost-effective fuel alternative for industries aiming to reduce their carbon footprint.',
     applications: [
       'District heating',
       'Power generation',
@@ -209,7 +214,7 @@ export const fuels: Fuel[] = [
     name: 'CNS Biomass',
     type: 'CNS',
     description: 'Nature Bio Works offers Coconut Shell Biomass (CNS Biomass) — a premium-grade, carbon-rich biofuel derived from clean, dried coconut shells. With exceptionally high calorific value and low ash content, CNS biomass is an excellent alternative to coal for industries requiring intense, stable heat with minimal emissions.',
-    image: 'https://images.pexels.com/photos/4440173/pexels-photo-4440173.jpeg',
+    image: cnsBiomass,
     calorificValue: '4800',
     advantages: [
       'High calorific value',

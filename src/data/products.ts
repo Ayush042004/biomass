@@ -1,3 +1,10 @@
+import steamBoiler from '../assets/steam boilers.png';
+import hotAirGenerator from '../assets/Hot Air Generators.png';
+import electricHotWater from '../assets/3.png';
+import steamGenerator from '../assets/Steam Generators.png';
+import thermicFluid from '../assets/Thermic Fluid Heaters.png';
+import hotWaterGenerator from '../assets/Hot Water Generators.png';
+
 export interface Product {
   id: string;
   title: string;
@@ -16,7 +23,7 @@ export const products: Product[] = [
     id: 'steam-boilers',
     title: 'Steam Boilers',
     description: 'Advanced steam boilers engineered for safe and efficient steam generation, perfect for industrial applications.',
-    image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
+    image: steamBoiler,
     category: 'Steam Boilers',
     details: [
       'Fully automated operation',
@@ -72,7 +79,7 @@ export const products: Product[] = [
     id: 'hot-air-generators',
     title: 'Hot Air Generators',
     description: 'Industrial-grade hot air generators for efficient drying and heating processes.',
-    image: 'https://images.pexels.com/photos/2846615/pexels-photo-2846615.jpeg',
+    image: hotAirGenerator,
     category: 'Hot Air Generators',
     details: [
       'Precise temperature control',
@@ -128,7 +135,7 @@ export const products: Product[] = [
     id: 'electric-hot-water',
     title: 'Electric Hot Water Systems',
     description: 'High-efficiency electric hot water systems for commercial and industrial applications.',
-    image: 'https://images.pexels.com/photos/247763/pexels-photo-247763.jpeg',
+    image: electricHotWater,
     category: 'Electric Hot Water',
     details: [
       'Smart temperature management',
@@ -184,7 +191,7 @@ export const products: Product[] = [
     id: 'steam-generators',
     title: 'Steam Generators',
     description: 'Compact and efficient steam generation solutions for various industrial processes.',
-    image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
+    image: steamGenerator,
     category: 'Steam Generators',
     details: [
       'Rapid steam production',
@@ -240,7 +247,7 @@ export const products: Product[] = [
     id: 'thermic-fluid',
     title: 'Thermic Fluid Heaters',
     description: 'Advanced heat transfer solutions for precise temperature control in industrial processes.',
-    image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
+    image: thermicFluid,
     category: 'Thermic Fluid',
     details: [
       'Optimal heat transfer',
@@ -296,7 +303,7 @@ export const products: Product[] = [
     id: 'hot-water-generators',
     title: 'Hot Water Generators',
     description: 'Reliable hot water generation systems for industrial and commercial applications.',
-    image: 'https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg',
+    image: hotWaterGenerator,
     category: 'Hot Water Generators',
     details: [
       'High efficiency',
