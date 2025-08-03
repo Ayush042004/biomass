@@ -66,9 +66,11 @@ const slides = [
 
 const ImageCarousel: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
+      setDirection(1);
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 4000);
 
@@ -76,60 +78,87 @@ const ImageCarousel: React.FC = () => {
   }, []);
 
   const slideVariants = {
-    enter: {
-      opacity: 0,
-      scale: 1.1
-    },
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    }),
     center: {
+      zIndex: 1,
+      x: 0,
       opacity: 1,
-      scale: 1,
       transition: {
-        duration: 1.2,
+        duration: 0.8,
         ease: "easeOut"
       }
     },
-    exit: {
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
       opacity: 0,
-      scale: 0.9,
       transition: {
-        duration: 0.8
+        duration: 0.8,
+        ease: "easeIn"
       }
-    }
+    })
   };
 
   const textVariants = {
-    enter: {
-      opacity: 0,
-      y: 50
-    },
+    enter: (direction: number) => ({
+      x: direction > 0 ? 100 : -100,
+      opacity: 0
+    }),
     center: {
+      x: 0,
       opacity: 1,
-      y: 0,
       transition: {
-        duration: 0.8,
-        delay: 0.3,
+        duration: 0.6,
+        delay: 0.2,
         ease: "easeOut"
       }
     },
-    exit: {
+    exit: (direction: number) => ({
+      x: direction < 0 ? 100 : -100,
       opacity: 0,
-      y: -30,
       transition: {
-        duration: 0.5
+        duration: 0.4,
+        ease: "easeIn"
       }
-    }
+    })
+  };
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity;
+  };
+
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setCurrentSlide((prev) => (prev + newDirection + slides.length) % slides.length);
   };
 
   return (
     <div className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] min-h-[400px] sm:min-h-[500px] md:min-h-[600px] overflow-hidden">
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}
           className="absolute inset-0"
+          custom={direction}
           variants={slideVariants}
           initial="enter"
           animate="center"
           exit="exit"
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={1}
+          onDragEnd={(e, { offset, velocity }) => {
+            const swipe = swipePower(offset.x, velocity.x);
+
+            if (swipe < -swipeConfidenceThreshold) {
+              paginate(1);
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1);
+            }
+          }}
         >
           <img
             src={slides[currentSlide].image}
@@ -141,6 +170,7 @@ const ImageCarousel: React.FC = () => {
             <div className="container-custom text-white text-center px-4">
               <motion.h2 
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 text-primary-300"
+                custom={direction}
                 variants={textVariants}
                 initial="enter"
                 animate="center"
@@ -150,6 +180,7 @@ const ImageCarousel: React.FC = () => {
               </motion.h2>
               <motion.p 
                 className="text-sm sm:text-base md:text-lg lg:text-xl"
+                custom={direction}
                 variants={textVariants}
                 initial="enter"
                 animate="center"
@@ -170,7 +201,10 @@ const ImageCarousel: React.FC = () => {
             className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide ? 'bg-white scale-125' : 'bg-white/50'
             }`}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => {
+              setDirection(index > currentSlide ? 1 : -1);
+              setCurrentSlide(index);
+            }}
           />
         ))}
       </div>
@@ -178,7 +212,7 @@ const ImageCarousel: React.FC = () => {
       {/* Navigation arrows */}
       <button
         className="absolute left-2 sm:left-3 md:left-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-1 sm:p-2 rounded-full transition-all duration-300"
-        onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+        onClick={() => paginate(-1)}
       >
         <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -186,7 +220,7 @@ const ImageCarousel: React.FC = () => {
       </button>
       <button
         className="absolute right-2 sm:right-3 md:right-4 top-1/2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-1 sm:p-2 rounded-full transition-all duration-300"
-        onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+        onClick={() => paginate(1)}
       >
         <svg className="w-3 h-3 sm:w-4 sm:h-4 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
