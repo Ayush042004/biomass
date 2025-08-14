@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Column 1: Logo and About */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-3 sm:mb-4">
-              <Logo size={40} color="white" />
+              <Logo size={70} color="white" />
               <span className="ml-2 text-base sm:text-lg lg:text-xl font-bold font-display tracking-tight">Nature Bio Works</span>
             </Link>
             <p className="text-gray-400 mb-3 sm:mb-4 text-body leading-relaxed text-sm sm:text-base">
