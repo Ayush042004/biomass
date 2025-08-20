@@ -58,7 +58,7 @@ const TeamPage: React.FC = () => {
               className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-100 max-w-3xl mt-2 sm:mt-3 md:mt-4 px-4"
               variants={itemVariants}
             >
-              At Nature Bio Works, our strength lies in the expertise and foresight of our people. From leadership to advisory, every member brings unique capabilities to advance our mission of sustainable energy transformation.
+              At Nature Bio Works, our strength lies in the expertise and foresight of our people. From leadership to advisory, every member brings unique capabilities to advance our mission of sustainable energy transformation. Foresight of our team of 250+ minds.
             </motion.p>
           </motion.div>
         </div>
@@ -143,7 +143,7 @@ const TeamPage: React.FC = () => {
               Advisory Board
             </motion.h2>
             <motion.p 
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-primary-700 max-w-3xl mx-auto px-4"
+              className="text-xs sm:text-sm md:text-base lg:text-lg text-primary-700 max-w-3xl mx-auto px-4"
               variants={itemVariants}
             >
                Our Advisory Board is a network of industry experts, thought leaders, and innovators who provide strategic guidance and insights to help us navigate the complexities of biomass energy and sustainability.

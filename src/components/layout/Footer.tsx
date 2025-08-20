@@ -10,8 +10,10 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Column 1: Logo and About */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center mb-3 sm:mb-4">
-              <Logo size={70} color="white" />
+            <Link to="/" className="flex items-center mb-3 sm:mb-4 ">
+            <div className='bg-white'>
+              <Logo size={80} color="white" />
+              </div>
               <span className="ml-2 text-base sm:text-lg lg:text-xl font-bold font-display tracking-tight">Nature Bio Works</span>
             </Link>
             <p className="text-gray-400 mb-3 sm:mb-4 text-body leading-relaxed text-sm sm:text-base">

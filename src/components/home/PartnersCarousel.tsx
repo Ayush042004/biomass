@@ -99,6 +99,7 @@ const PartnersCarousel: React.FC = () => {
                 variants={itemVariants}
               >
                 {/* Partner Card */}
+                
                 <div className="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-18 lg:w-32 lg:h-20 xl:w-40 xl:h-24 flex items-center justify-center p-2 sm:p-3 md:p-4 bg-white rounded-lg shadow-md group-hover:shadow-xl transition-all duration-300 border-2 border-transparent group-hover:border-primary-500 group-hover:scale-110 group-hover:-translate-y-2">
                   {/* Company Logo */}
                   <img 

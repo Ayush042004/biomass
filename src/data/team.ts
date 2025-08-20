@@ -17,9 +17,9 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Diya Kukreja',
-    role: 'Director – Strategy & Communications',
+    role: 'Director –  Strategy, Partnerships & Communications',
     photo: pics,
-    bio: ' Diya spearheads strategic partnerships, brand storytelling, and ESG advocacy. Her work bridges the gap between grassroots innovation and global sustainability goals, positioning Nature Bio Works as a thought leader in the circular economy space.',
+    bio: "Diya steers Nature Bio Works’ strategic direction and external partnerships, while driving communication that positions the company as a global leader in clean energy and circular economy solutions. Her focus on process optimisation and opportunity creation ensures impact.",
     department: 'leadership'
   },
   {
@@ -31,9 +31,30 @@ export const teamMembers: TeamMember[] = [
   },
   {
     name: 'Aditi Malhotra',
-    role: 'Advisor – Waste Management & Project Execution',
+    role: 'Advisor – Project Execution',
     photo: pics,
-    bio: '  Aditi brings over a decade of operational experience in executing biomass and municipal solid waste projects at scale. As a strategic advisor, she guides implementation best practices, quality standards, and workforce training protocols that drive project success across urban and rural deployments.',
+    bio: '  As President of the Women Youth Forum in Delhi, Aditi plays a key role in bridging the gap between Nature Bio Works and communities. She leads awareness and execution initiatives, ensuring that the company’s sustainability projects are not only implemented effectively but also embraced at the grassroots level.',
     department: 'Advisory Board'
   },
+  {
+    name: 'Dr. Ravindra kumar',
+    role: 'Director – Operations',
+    photo: pics,
+    bio: 'A dynamic professional with a Master’s in Business Administration, Master’s in Political Science, and a PG Diploma in Environmental Law and Policy, combining expertise in management, governance, and sustainability.',
+    department: 'leadership'
+  },
+  {
+    name: 'CA Shubham Agarwal',
+    role: 'CFO',
+    photo: pics,
+    bio: 'Shubham is a graduate from Delhi University and qualified Chartered Accountant in the year 2010.',
+    department: 'leadership'
+  },
+  {
+    name: "Aishwarya Singh",
+    role: 'Director – Operations',
+    photo: pics,
+    bio: 'Aishwarya is a graduate from Delhi University and qualified Chartered Accountant in the year 2010.',
+    department: 'leadership'
+  }
 ];

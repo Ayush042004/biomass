@@ -85,7 +85,7 @@ export const fuels: Fuel[] = [
   },
   {
     id: 'pellets',
-    name: 'Wood Pellets',
+    name: 'Biomass Pellets',
     type: 'Pellets',
     description: 'Nature Bio Works produces high-quality wood pellets made from sawdust, wood chips, agro-forestry residues, and processed biomass. These pellets are a clean-burning, renewable fuel source designed to deliver uniform heat with minimal ash — ideal for heating systems, industrial boilers, and commercial power applications.',
     image: biomassPellets,
@@ -149,7 +149,7 @@ export const fuels: Fuel[] = [
   {
     id: 'wood-chips',
     name: 'Biomass Chips',
-    type: 'Wood Chips',
+    type: 'Biomass Chips',
     image: biomassChips,
     calorificValue: '3500',
     advantages: [
@@ -176,10 +176,6 @@ export const fuels: Fuel[] = [
         answer: "Moisture content ranges from 25% to 35%."
       },
       {
-        question: "What wood species are used?",
-        answer: "Mix of softwood and hardwood from sustainable forestry."
-      },
-      {
         question: "How is quality consistency maintained?",
         answer: "Regular testing and screening processes ensure consistent quality."
       },
@@ -192,7 +188,7 @@ export const fuels: Fuel[] = [
         answer: "Minimum order of 20 cubic meters."
       },
       {
-        question: "How should wood chips be stored?",
+        question: "How should biomass chips be stored?",
         answer: "Store in well-ventilated, covered area with proper drainage."
       },
       {

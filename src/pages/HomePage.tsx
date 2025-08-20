@@ -52,21 +52,21 @@ const HomePage: React.FC = () => {
   const testimonials = [
     {
       quote: "Nature Bio Works has been instrumental in supporting our shift toward clean energy. Their biomass briquettes and RDF fuels have helped us significantly reduce our carbon footprint and meet internal ESG benchmarks — all without compromising operational efficiency.",
-      author: "Sarah Chen",
+      author: "",
       role: "Sustainability Head, Leading Beverage Manufacturer",
       image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
       rating: 5
     },
     {
       quote: "Their team brought deep technical expertise and a turnkey solution to the table. From fuel supply to boiler integration, the entire transition was seamless — a rare combination of reliability, innovation, and environmental commitment.",
-      author: "Emma Thompson",
+      author: "",
       role: "Energy Manager, Global Consumer Goods Company",
       image: "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg",
       rating: 5
     },
     {
       quote: "Nature Bio Works has consistently delivered high-quality biomass fuel solutions at scale. Their ability to convert waste into energy not only meets regulatory expectations but supports our long-term sustainability roadmap.",
-      author: "David Park",
+      author: "",
       role: "VP - Environment & Compliance, Major Infrastructure Group",
       image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg",
       rating: 5
@@ -145,7 +145,7 @@ const HomePage: React.FC = () => {
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Link to="/research" className="btn-outline border-white text-white hover:bg-white/10 text-center inline-block text-sm sm:text-base">
-                  Research & Development
+                Get your Roadmap
                 </Link>
               </motion.div>
             </motion.div>
